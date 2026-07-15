@@ -1,5 +1,11 @@
 # Changelog
 
+## v2.2.1 (2026-07-15)
+
+Link-hygiene patch.
+
+- Removed the claude-cowork-legal-onboarding entry from the Part of the ecosystem section; that repository was retired and deleted by the maintainer on 15 July 2026. Three nearest neighbors remain. No other change; the v2.2.0 changelog entry stands as the historical record.
+
 ## v2.2.0 (2026-07-15)
 
 Ecosystem integration release under the repository improvement program. Three-part semantic versioning applies from this release; prior releases retain their two-part labels.

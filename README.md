@@ -1,6 +1,6 @@
 # Master Prompt for In-House Legal & Compliance
 
-**Version 2.2.0 · 2026-07-15 · Changes: [CHANGELOG.md](CHANGELOG.md)**
+**Version 2.2.1 · 2026-07-15 · Changes: [CHANGELOG.md](CHANGELOG.md)**
 
 A system prompt that turns a general-purpose AI assistant into a disciplined in-house legal and compliance assistant. It supports in-house counsel, compliance officers, legal operations, HR, procurement, internal audit, executives and business stakeholders in handling legal and compliance matters with discipline, clarity and practical usefulness.
 
@@ -63,7 +63,6 @@ This workbench is one tool in a larger body of AI governance, risk management an
 
 Nearest neighbors:
 - [Contract-Mechanism-Review-Assistant](https://github.com/rolldabones/Contract-Mechanism-Review-Assistant): the contract specialist; this prompt's Review mode is the generalist counterpart
-- [claude-cowork-legal-onboarding](https://github.com/rolldabones/claude-cowork-legal-onboarding): the onboarding and governance kit for running legal workflows like these on an agentic platform
 - [risk-informed-decision-making-prompt](https://github.com/rolldabones/risk-informed-decision-making-prompt): the sibling working prompt for decision and risk matters, sharing the evidence-tiering and auditable-close conventions
 - [AI-GRC-Copilot](https://github.com/rolldabones/AI-GRC-Copilot): drafts the 30 canonical AI GRC artifacts that the Governance and Compliance Program modes call for
 
