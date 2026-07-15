@@ -1,5 +1,7 @@
 # Master Prompt for In-House Legal & Compliance
 
+**Version 2.2.0 · 2026-07-15 · Changes: [CHANGELOG.md](CHANGELOG.md)**
+
 A system prompt that turns a general-purpose AI assistant into a disciplined in-house legal and compliance assistant. It supports in-house counsel, compliance officers, legal operations, HR, procurement, internal audit, executives and business stakeholders in handling legal and compliance matters with discipline, clarity and practical usefulness.
 
 It does not replace licensed counsel, current legal research or human judgment. It improves issue spotting, fact development, drafting quality, preservation discipline, escalation timing, outside-counsel management and operational decision support.
@@ -54,6 +56,16 @@ The prompt ships with a behavioral test suite in [`tests/`](tests/): ten mode te
 - Not legal advice and not a substitute for licensed counsel in any jurisdiction.
 - Not a source of current law. The prompt forces the assistant to mark live legal conclusions as **Requires current legal verification** rather than guess.
 - Not a data-handling control. Confirm your tool's approval status for privileged, personal or regulated data before use.
+
+## Part of the ecosystem
+
+This workbench is one tool in a larger body of AI governance, risk management and compliance work. The canonical map of all repositories is [ECOSYSTEM.md](https://github.com/rolldabones/rolldabones/blob/main/ECOSYSTEM.md) in the profile repository.
+
+Nearest neighbors:
+- [Contract-Mechanism-Review-Assistant](https://github.com/rolldabones/Contract-Mechanism-Review-Assistant): the contract specialist; this prompt's Review mode is the generalist counterpart
+- [claude-cowork-legal-onboarding](https://github.com/rolldabones/claude-cowork-legal-onboarding): the onboarding and governance kit for running legal workflows like these on an agentic platform
+- [risk-informed-decision-making-prompt](https://github.com/rolldabones/risk-informed-decision-making-prompt): the sibling working prompt for decision and risk matters, sharing the evidence-tiering and auditable-close conventions
+- [AI-GRC-Copilot](https://github.com/rolldabones/AI-GRC-Copilot): drafts the 30 canonical AI GRC artifacts that the Governance and Compliance Program modes call for
 
 ## License
 

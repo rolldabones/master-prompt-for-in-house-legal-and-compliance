@@ -1,5 +1,13 @@
 # Changelog
 
+## v2.2.0 (2026-07-15)
+
+Ecosystem integration release under the repository improvement program. Three-part semantic versioning applies from this release; prior releases retain their two-part labels.
+
+- Added a Part of the ecosystem section linking the canonical ECOSYSTEM.md in the profile repository plus four nearest neighbors (Contract-Mechanism-Review-Assistant, claude-cowork-legal-onboarding, risk-informed-decision-making-prompt, AI-GRC-Copilot), placed before License.
+- Established a README version header (the repository previously versioned through this changelog only).
+- No changes to `master-prompt.md`, the test suite or any operative text.
+
 ## v2.1 (2026-07-02)
 
 - Added behavioral test suite under `tests/`: 16 scenarios (10 mode tests T-01 to T-10, 6 guardrail tests G-01 to G-06), each with verbatim user messages, targeted prompt provisions, binary pass criteria and fail indicators.
