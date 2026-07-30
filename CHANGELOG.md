@@ -1,5 +1,25 @@
 # Changelog
 
+## v2.3.0 (2026-07-30)
+
+Structural restoration. The repository is made to match what its own README has described since v2.0.
+
+### Added
+- master-prompt.md, the master prompt itself, restored verbatim at v2.1 from the committed archive master-prompt-repo-v2.1. The repository's central artifact had never been committed to main. The README file table has linked to it, and the Quick Start has instructed readers to open it, since v2.0. The internal version header of the restored file is left at 2.1 because that is the version as authored; the repository version and the prompt version are separate series and are not forced into agreement.
+- LICENSE.md, restored verbatim from the same archive. The README file table and License section have linked to it since v2.0. Terms are CC BY-NC-SA 4.0, consistent with the terms stated in the README.
+- tests/ directory restored with README.md, scenarios.md, scorecard.md and run_tests.py, matching the paths the README and the test protocol both reference.
+
+### Fixed
+- Three of the four links in the README file table resolved 404: master-prompt.md, tests/ and LICENSE.md. All three now resolve. No README wording changed to achieve this; the files were simply missing.
+- "run tests.py" renamed to run_tests.py. The space-free name is not new: tests/README.md has referenced run_tests.py in three places, including the documented invocation python tests/run_tests.py, since v2.0. The file on main carried the space.
+
+### Removed
+- master-prompt-repo-v2.1, a delivery archive committed to main with no file extension. Its contents are now on main in their intended structure. The four files that had been flattened to root (scenarios.md, scorecard.md, tests-README.md and "run tests.py") were verified byte-identical to their counterparts inside the archive before removal, in both directions.
+- The flattened root copies, superseded by the tests/ directory.
+
+### Note
+- This is the same defect pattern that retired claude-cowork-legal-onboarding: a delivery archive committed, its contents flattened to root, one filename mangled and two files never landing. Here the archive was still on main, so the structure was recoverable and verifiable.
+
 ## v2.2.1 (2026-07-15)
 
 Link-hygiene patch.

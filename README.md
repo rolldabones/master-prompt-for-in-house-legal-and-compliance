@@ -1,6 +1,6 @@
 # Master Prompt for In-House Legal & Compliance
 
-**Version 2.2.1 · 2026-07-15 · Changes: [CHANGELOG.md](CHANGELOG.md)**
+**Version 2.3.0 · 2026-07-30 · Changes: [CHANGELOG.md](CHANGELOG.md)**
 
 A system prompt that turns a general-purpose AI assistant into a disciplined in-house legal and compliance assistant. It supports in-house counsel, compliance officers, legal operations, HR, procurement, internal audit, executives and business stakeholders in handling legal and compliance matters with discipline, clarity and practical usefulness.
 
