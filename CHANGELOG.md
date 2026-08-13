@@ -1,5 +1,12 @@
 # Changelog
 
+## v2.3.1 (2026-08-13)
+
+License metadata sweep. An `SPDX-License-Identifier: CC-BY-NC-SA-4.0` line and the canonical Creative Commons legal code are now carried inside the existing license file. The filename is unchanged and the human-readable summary is retained above the legal code.
+
+- The primary audience is automated intake and provenance tooling, which reads the SPDX tag rather than prose. Automated license detection previously reported nothing across all twenty-one repositories in this account.
+- No change to the licence in force. The identifier records what was already true.
+
 ## v2.3.0 (2026-07-30)
 
 Structural restoration. The repository is made to match what its own README has described since v2.0.
