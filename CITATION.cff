@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you cite this work, please use the metadata below."
+title: "Master Prompt for In-House Legal & Compliance"
+authors:
+  - family-names: "Paik"
+    given-names: "Son-U Michael"
+version: 2.3.2
+date-released: "2026-09-06"
+license: CC-BY-NC-SA-4.0
+repository-code: "https://github.com/rolldabones/master-prompt-for-in-house-legal-and-compliance"
+abstract: "The general-purpose in-house legal and compliance workbench."

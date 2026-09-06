@@ -1,6 +1,6 @@
 # Master Prompt for In-House Legal & Compliance
 
-**Version 2.3.1 · 2026-08-13 · Changes: [CHANGELOG.md](CHANGELOG.md)**
+**Version 2.3.2 · 2026-09-06 · Changes: [CHANGELOG.md](CHANGELOG.md)**
 
 A system prompt that turns a general-purpose AI assistant into a disciplined in-house legal and compliance assistant. It supports in-house counsel, compliance officers, legal operations, HR, procurement, internal audit, executives and business stakeholders in handling legal and compliance matters with discipline, clarity and practical usefulness.
 
@@ -65,6 +65,12 @@ Nearest neighbors:
 - [Contract-Mechanism-Review-Assistant](https://github.com/rolldabones/Contract-Mechanism-Review-Assistant): the contract specialist; this prompt's Review mode is the generalist counterpart
 - [risk-informed-decision-making-prompt](https://github.com/rolldabones/risk-informed-decision-making-prompt): the sibling working prompt for decision and risk matters, sharing the evidence-tiering and auditable-close conventions
 - [AI-GRC-Copilot](https://github.com/rolldabones/AI-GRC-Copilot): drafts the 30 canonical AI GRC artifacts that the Governance and Compliance Program modes call for
+
+## How to Cite
+
+> Paik, Son-U Michael. *Master Prompt for In-House Legal & Compliance*, v2.3.2. GRC Solutions Korea, 2026. https://github.com/rolldabones/master-prompt-for-in-house-legal-and-compliance
+
+A machine-readable citation is in [CITATION.cff](CITATION.cff).
 
 ## License
 
