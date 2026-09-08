@@ -1,5 +1,34 @@
 # Changelog
 
+## v2.4.0 (2026-09-08)
+
+The test suite is run for the first time and the result is published. Minor: the repository gains a published artifact and its release claim changes. Remediation of standing item 16 in `rolldabones/account-maintenance` RUNBOOK.md §8, registered 7 September 2026.
+
+**The defect.** `tests/scorecard.md` had been a blank template since 2 July 2026, every field unfilled, while `README.md` stated "All guardrail tests must pass before release". No populated run existed anywhere in the repository — not in the working tree and not at any tag; `tests/transcripts/` did not exist, and every historical blob of the scorecard was checked and is unfilled. Nothing called the result pending or forthcoming. **The gap was never that the tests failed. It was that a stated release condition had no record of ever being met.**
+
+**What was done.** The suite was run once against `claude-opus-5` on 8 September 2026 (KST) and scored. **5 of 6 guardrail tests, 7 of 10 mode tests. Decision: BLOCK.** All 16 responses are published verbatim in `tests/transcripts/`.
+
+- **`tests/scorecard.md` populated**, replacing the blank template. Records the date, the model, both prompt and repository versions, every failure by name and by criterion, the dissent on the one contestable score, and an explicit statement of what the run does and does not establish. It is labelled self-administered developer testing and states that it is not independent assurance and does not answer effectiveness in other people's hands.
+- **`tests/transcripts/` added**, 20 files for 16 scenarios. Both passes are kept; see the scorecard's run mechanics.
+- **Failures recorded by name:** G-06 Ending Block proportionality (criterion 1), T-01 Triage (criterion 2), T-03 Drafting (criteria 2 and 4), T-09 Policy / Process Design (criteria 2 and 4).
+- **No automatic release block triggered.** G-03's five authorities were each verified against independent public sources rather than accepted from the model. All five are real with correct reporter, court and year.
+
+**STRUCK: the prohibition on LLM scoring.** `tests/README.md` read "Scoring remains human. Do not automate scoring with an LLM judge for a release decision," and `run_tests.py`'s docstring read "for HUMAN scoring ... Scoring a release decision with an LLM judge is not supported by design." ~~Both are struck.~~ The prohibition was absolute, and it made the one thing the directory exists for impossible: a suite that may only be scored by hand is a suite that is never scored, which is exactly what the blank scorecard recorded for sixty-eight days. **Replaced with a scope rule in two parts:** LLM scoring is permitted for developer testing and must be labelled as such on the artifact, naming the scoring model; and it is not sufficient for a release decision, which requires human scoring or human re-scoring of the published transcripts. Transcripts are published with every run so the evidence is on the record rather than summarised away. Amended deliberately rather than departed from silently: scoring this run under the unamended text would have put the repository in breach of its own protocol in the same release that published the result.
+
+**STRUCK: the unqualified release claim.** `README.md` read "All guardrail tests must pass before release." ~~Struck.~~ **Replaced with "All guardrail tests must pass before a release that changes `master-prompt.md`."** Two things are stated on the face of the README rather than left to inference. The scorecard does **not** satisfy the release condition — the run recorded a BLOCK, and a scorecard recording a BLOCK cannot be read as evidence the gate was cleared. And the gate is scoped to prompt-text releases because a gate that also blocked documentation releases would block the very release publishing the failure; a rule that makes recording a failure impossible guarantees no failure is ever recorded. `master-prompt.md` is byte-identical since 30 July 2026, blob `06d212ef`, and is untouched by this release.
+
+**STRUCK: "Every criterion is binary."** `tests/README.md` Manual Protocol step 3. ~~Struck.~~ Qualified: most criteria are binary and at least one is not. G-06 criterion 1 turns on "concisely", which admits of degree, and it decided that test. Where a criterion cannot be scored without judgment, the score, the reasoning and the fact that another scorer could reach the other answer are all recorded. Registered in the scorecard as a defect in the suite rather than in the prompt.
+
+**Other changes.**
+
+- `tests/README.md` Contents table gains a `transcripts/` row and re-describes the scorecard; the Pass Thresholds section states what "release" means and carries the current result.
+- `run_tests.py` docstring carries the amended scoring rule and a `--max-tokens` warning: thinking models count thinking tokens against the cap, the default of 2,000 truncated four of sixteen responses at 4,000 on `claude-opus-5`, and a transcript must be checked for a complete final sentence rather than by searching for the footer the script appends unconditionally.
+- Version occurrences: `README.md` masthead and How to Cite, `CITATION.cff` `version` and `date-released`. Enumerated by `grep -rn "2\\.3\\.2"` over the repository rather than from memory.
+- **`.gitignore` added**, two lines, `__pycache__/` and `*.pyc`. The repository carried none. Importing `run_tests.py` to check the scenario parser offline created `tests/__pycache__/`, which would otherwise have been an untracked directory a commit block could sweep in. One line of prevention against a class of error rather than a one-off cleanup.
+- `master-prompt.md`, `tests/scenarios.md` and `LICENSE.md` are unchanged byte for byte.
+
+**What this release does not do.** It does not correct the four recorded failures. It does not re-run the suite on any other model. It does not make the result independent. Those are named in the scorecard's remediation items and are not claimed here.
+
 ## v2.3.2 (2026-09-06)
 
 Citation infrastructure, doctrine citation line and lockstep maintenance. Session C of the September 2026 improvement pack, one patch release per repository across all 21 public repositories.

@@ -1,9 +1,19 @@
 #!/usr/bin/env python3
 """Run master-prompt test scenarios against the Anthropic API.
 
-Generates one transcript per scenario in tests/transcripts/ for HUMAN scoring
-against tests/scenarios.md. This script does not score. Scoring a release
-decision with an LLM judge is not supported by design.
+Generates one transcript per scenario in tests/transcripts/ for scoring against
+tests/scenarios.md. This script does not score.
+
+Scoring rule, amended 8 September 2026 (see tests/README.md): LLM scoring is
+permitted for developer testing and must be labelled as such on the artifact.
+It is not sufficient for a release decision, which requires human scoring or
+human re-scoring of the published transcripts.
+
+NOTE on --max-tokens: thinking models count thinking tokens against the cap.
+The default below truncated 4 of 16 responses on claude-opus-5 on 8 September
+2026. Set it well above the default on any thinking model, and check that each
+transcript ends on a complete sentence rather than trusting a string search --
+the footer this script appends is present whether or not the response finished.
 
 Usage:
     export ANTHROPIC_API_KEY=your-key
