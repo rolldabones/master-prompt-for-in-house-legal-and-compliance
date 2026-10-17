@@ -1,5 +1,14 @@
 # Changelog
 
+## v2.4.1 (2026-10-17)
+
+Patch. Session T3 of the whole-account review of 15 October 2026 (doc sections 1 and 8; reviewer report 14, items 21 to 23). Documentation only: `master-prompt.md` is byte-identical and the release gate is not engaged.
+
+- `README.md` Governing Method: the three doctrine lines now copy the short forms of rolldabones DOCTRINE.md v1.2.0 section 8 verbatim, with one task-altitude sentence each, and the doctrine citation line is added. The previous lines restated Informed Intent as alignment on objective and audience, without the four elements, and Slow AI as deliberate use rather than speed, a tempo rule the canon rejects.
+- Not changed, and why: the Definitions block of `master-prompt.md` carries the same variant wording. Changing it is a release that changes `master-prompt.md`, which the README binds to a passing guardrail run; the edit waits for the re-run of the suite (session T5 of the review).
+- House style in live files: twelve em dashes in `tests/scorecard.md` and one in `README.md` replaced; "behaviour", "labelled", "summarised" and "characterised" corrected to US spelling in `tests/scorecard.md` and `tests/README.md`; three serial commas removed. The scorecard's findings, scores and dissent are unchanged; four of its headings lose an em dash, so their anchors change (no inbound link found). Shipped changelog entries are left as written (ruling 7 of 15 October 2026).
+- Closing line added to `tests/scenarios.md` and to this file.
+
 ## v2.4.0 (2026-09-08)
 
 The test suite is run for the first time and the result is published. Minor: the repository gains a published artifact and its release claim changes. Remediation of standing item 16 in `rolldabones/account-maintenance` RUNBOOK.md §8, registered 7 September 2026.
@@ -100,3 +109,7 @@ Ecosystem integration release under the repository improvement program. Three-pa
 ## v1.0 (initial release)
 
 - Single-file README containing the full master prompt: purpose, definitions, ten core operating principles, Informed Intent Gate, ten modes with five invocation patterns, universal workflow, matter management, escalation triggers, governance architecture, whistleblower, preservation, outside counsel, employment and IP rules, stop rules, communication style, required ending block and final instruction.
+
+---
+
+**Final Liability rests with the Human.**

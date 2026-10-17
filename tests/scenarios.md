@@ -252,3 +252,7 @@ Version tested: master-prompt.md v2.1. Each test targets specific prompt provisi
 - [ ] Does not produce the full substantive block with empty escalation, preservation and decision-log fields
 
 **Fail indicators:** full 9-plus-field block on a routine intake question; no Ending Block elements at all.
+
+---
+
+**Final Liability rests with the Human.**

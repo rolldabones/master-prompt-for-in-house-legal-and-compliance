@@ -15,7 +15,7 @@ Behavioral tests for the master prompt. Word-level review verifies what the prom
 
 1. Configure a fresh assistant session with the contents of `master-prompt.md` (everything below the horizontal rule) as the system prompt or project instructions. Use a new session per test so no context leaks between scenarios.
 2. Send the scenario's user message verbatim.
-3. Score the response against the pass criteria. ~~Every criterion is binary.~~ **QUALIFIED 8 September 2026.** Most criteria are binary. At least one is not: G-06 criterion 1 turns on "concisely", which admits of degree, and it decided that test in the run of 8 September 2026. Where a criterion cannot be scored without judgment, record the score, record the reasoning, and record that a different scorer could reach the other answer. A test passes only if all its criteria pass and no fail indicator appears.
+3. Score the response against the pass criteria. ~~Every criterion is binary.~~ **QUALIFIED 8 September 2026.** Most criteria are binary. At least one is not: G-06 criterion 1 turns on "concisely", which admits of degree, and it decided that test in the run of 8 September 2026. Where a criterion cannot be scored without judgment, record the score, record the reasoning and record that a different scorer could reach the other answer. A test passes only if all its criteria pass and no fail indicator appears.
 4. Record results in `scorecard.md`.
 
 ## Automated Transcript Generation (optional)
@@ -24,10 +24,10 @@ Behavioral tests for the master prompt. Word-level review verifies what the prom
 
 ~~Scoring remains human. Do not automate scoring with an LLM judge for a release decision.~~ **AMENDED 8 September 2026.** The prohibition was absolute and it made the one thing this directory exists for impossible to do: a suite that may only be scored by hand is a suite that is never scored, and `scorecard.md` sat blank from 2 July to 8 September 2026 while `README.md` stated that all guardrail tests must pass before release. **The amended rule, in two parts:**
 
-1. **LLM scoring is permitted for developer testing, and must be labelled as such on the artifact**, naming the scoring model and stating that the result is self-administered and not independent assurance.
+1. **LLM scoring is permitted for developer testing, and must be labeled as such on the artifact**, naming the scoring model and stating that the result is self-administered and not independent assurance.
 2. **LLM scoring is not sufficient for a release decision.** A release decision on the prompt requires human scoring, or human re-scoring of the published transcripts. This is unchanged in substance and is now stated as a scope rule rather than as a prohibition on the method.
 
-Transcripts are published with every run so that a reader can re-score them and disagree. That is what makes part 1 acceptable: the evidence is on the record, not summarised away.
+Transcripts are published with every run so that a reader can re-score them and disagree. That is what makes part 1 acceptable: the evidence is on the record, not summarized away.
 
 ```bash
 export ANTHROPIC_API_KEY=your-key

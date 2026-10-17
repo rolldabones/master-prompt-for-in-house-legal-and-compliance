@@ -1,6 +1,6 @@
 # Master Prompt for In-House Legal & Compliance
 
-**Version 2.4.0 · 2026-09-08 · Changes: [CHANGELOG.md](CHANGELOG.md)**
+**Version 2.4.1 · 2026-10-17 · Changes: [CHANGELOG.md](CHANGELOG.md)**
 
 A system prompt that turns a general-purpose AI assistant into a disciplined in-house legal and compliance assistant. It supports in-house counsel, compliance officers, legal operations, HR, procurement, internal audit, executives and business stakeholders in handling legal and compliance matters with discipline, clarity and practical usefulness.
 
@@ -8,9 +8,11 @@ It does not replace licensed counsel, current legal research or human judgment. 
 
 ## Governing Method
 
-- **Informed Intent.** The User and the model align on objective, audience, jurisdiction, constraints, risk posture and intended use before substantive work begins.
-- **Slow AI.** Deliberate, verified, context-aware use of AI rather than speed for its own sake.
-- **Final Liability rests with the Human.** The User remains the decision-maker, accountable for final judgment, approvals and use of the output.
+- **Informed Intent**: no AI system acts without prior authorization stating its purpose, authority, boundaries and exit, given by a human who meets the five authorizer conditions. At task altitude the prompt applies it through its Informed Intent Gate, which holds substantive work until the User has stated the matter.
+- **Slow AI**: AI that cannot be governed, explained and audited is not deployed; the three tests are conjunctive, and the doctrine is a precondition, not a speed limit.
+- **Final Liability rests with the Human**: every material outcome attaches to a named human owner with decision rights, oversight and the power to intervene. Here that owner is the User, who remains the decision-maker.
+
+The three doctrines are used in this repository as stated in [DOCTRINE.md](https://github.com/rolldabones/rolldabones/blob/main/DOCTRINE.md), the account's single normative statement; the three lines above are its section 8 short forms. Where this repository restates a doctrine, it restates it at its own altitude and adds instruments, not doctrine (ECOSYSTEM.md protocol item 6). The definitions inside `master-prompt.md` still carry the earlier wording; they change only in a release that re-runs the test suite, because the gate below binds any release that changes that file.
 
 ## What's in This Repository
 
@@ -55,7 +57,7 @@ The prompt ships with a behavioral test suite in [`tests/`](tests/): ten mode te
 
 **The result, 8 September 2026:** `claude-opus-5`, self-administered developer testing, **5 of 6 guardrail tests and 7 of 10 mode tests. Decision: BLOCK.** The failures are named in [`tests/scorecard.md`](tests/scorecard.md) and every response is published verbatim in [`tests/transcripts/`](tests/transcripts/). No fabricated authority, invented fact or evidence-destruction suggestion appeared in any of the 16 responses; the automatic release block did not trigger.
 
-**Two things that follow, and both are stated rather than left to inference.** The scorecard does **not** satisfy the release condition — the run did not pass, and a scorecard recording a BLOCK cannot be read as evidence that the gate was cleared. And the gate is scoped to releases that change `master-prompt.md`, whose bytes are unchanged since 30 July 2026, because a gate that also blocked documentation releases would block the very release that publishes the failure. A rule that makes recording a failure impossible guarantees that no failure is ever recorded.
+**Two things that follow, and both are stated rather than left to inference.** The scorecard does **not** satisfy the release condition: the run did not pass, and a scorecard recording a BLOCK cannot be read as evidence that the gate was cleared. And the gate is scoped to releases that change `master-prompt.md`, whose bytes are unchanged since 30 July 2026, because a gate that also blocked documentation releases would block the very release that publishes the failure. A rule that makes recording a failure impossible guarantees that no failure is ever recorded.
 
 ## What This Is Not
 
@@ -74,7 +76,7 @@ Nearest neighbors:
 
 ## How to Cite
 
-> Paik, Son-U Michael. *Master Prompt for In-House Legal & Compliance*, v2.4.0. GRC Solutions Korea, 2026. https://github.com/rolldabones/master-prompt-for-in-house-legal-and-compliance
+> Paik, Son-U Michael. *Master Prompt for In-House Legal & Compliance*, v2.4.1. GRC Solutions Korea, 2026. https://github.com/rolldabones/master-prompt-for-in-house-legal-and-compliance
 
 A machine-readable citation is in [CITATION.cff](CITATION.cff).
 

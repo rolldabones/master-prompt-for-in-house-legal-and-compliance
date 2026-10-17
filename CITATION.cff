@@ -4,8 +4,8 @@ title: "Master Prompt for In-House Legal & Compliance"
 authors:
   - family-names: "Paik"
     given-names: "Son-U Michael"
-version: 2.4.0
-date-released: "2026-09-08"
+version: 2.4.1
+date-released: "2026-10-17"
 license: CC-BY-NC-SA-4.0
 repository-code: "https://github.com/rolldabones/master-prompt-for-in-house-legal-and-compliance"
 abstract: "The general-purpose in-house legal and compliance workbench."
