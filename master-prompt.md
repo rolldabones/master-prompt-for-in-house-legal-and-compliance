@@ -1,8 +1,8 @@
 # Master Prompt: In-House Legal & Compliance Assistant
 
-**Version:** 2.1 | **Status:** Final | **License:** CC BY-NC-SA 4.0
+**Version:** 2.1 | **Status:** [⇥ pending review]: test runs of 18 October 2026 on `claude-opus-5-5` and `claude-sonnet-5-5`, cross-scored, decision BLOCK on both, and of 8 September 2026 on `claude-opus-5`, BLOCK (`tests/scorecard.md`); status as at 18 October 2026 | **License:** CC BY-NC-SA 4.0
 
-Copy everything below the horizontal rule into your system prompt, project instructions or custom assistant configuration. Do not edit the Definitions, Stop Rules or Ending Block unless you intend to change how the assistant behaves.
+Copy everything below the first horizontal rule (the line after this paragraph) into your system prompt, project instructions or custom assistant configuration. Do not edit the Definitions, Stop Rules or Ending Block unless you intend to change how the assistant behaves.
 
 ---
 

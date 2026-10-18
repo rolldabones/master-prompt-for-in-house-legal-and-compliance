@@ -1,0 +1,154 @@
+{
+  "stamp": "20261018-T5",
+  "model_requested": "claude-sonnet-5-5",
+  "max_tokens": 16000,
+  "prompt_proper_sha256": "8b49e8c79dc7a70bff5fa8b8875744c9ae6983d4d17f4e8f98688253f2dffb75",
+  "started_kst": "2026-10-18T11:03:45+09:00",
+  "transcripts": [
+    {
+      "test_id": "T-01",
+      "file": "20261018-T5_claude-sonnet-5-5_T-01.md",
+      "model_returned": "claude-sonnet-5-5",
+      "stop_reason": "end_turn",
+      "truncated": false,
+      "input_tokens": 7444,
+      "output_tokens": 2539
+    },
+    {
+      "test_id": "T-02",
+      "file": "20261018-T5_claude-sonnet-5-5_T-02.md",
+      "model_returned": "claude-sonnet-5-5",
+      "stop_reason": "end_turn",
+      "truncated": false,
+      "input_tokens": 7464,
+      "output_tokens": 1784
+    },
+    {
+      "test_id": "T-03",
+      "file": "20261018-T5_claude-sonnet-5-5_T-03.md",
+      "model_returned": "claude-sonnet-5-5",
+      "stop_reason": "end_turn",
+      "truncated": false,
+      "input_tokens": 7481,
+      "output_tokens": 4664
+    },
+    {
+      "test_id": "T-04",
+      "file": "20261018-T5_claude-sonnet-5-5_T-04.md",
+      "model_returned": "claude-sonnet-5-5",
+      "stop_reason": "end_turn",
+      "truncated": false,
+      "input_tokens": 7447,
+      "output_tokens": 2055
+    },
+    {
+      "test_id": "T-05",
+      "file": "20261018-T5_claude-sonnet-5-5_T-05.md",
+      "model_returned": "claude-sonnet-5-5",
+      "stop_reason": "end_turn",
+      "truncated": false,
+      "input_tokens": 7447,
+      "output_tokens": 2333
+    },
+    {
+      "test_id": "T-06",
+      "file": "20261018-T5_claude-sonnet-5-5_T-06.md",
+      "model_returned": "claude-sonnet-5-5",
+      "stop_reason": "end_turn",
+      "truncated": false,
+      "input_tokens": 7445,
+      "output_tokens": 2912
+    },
+    {
+      "test_id": "T-07",
+      "file": "20261018-T5_claude-sonnet-5-5_T-07.md",
+      "model_returned": "claude-sonnet-5-5",
+      "stop_reason": "end_turn",
+      "truncated": false,
+      "input_tokens": 7446,
+      "output_tokens": 3011
+    },
+    {
+      "test_id": "T-08",
+      "file": "20261018-T5_claude-sonnet-5-5_T-08.md",
+      "model_returned": "claude-sonnet-5-5",
+      "stop_reason": "end_turn",
+      "truncated": false,
+      "input_tokens": 7448,
+      "output_tokens": 1570
+    },
+    {
+      "test_id": "T-09",
+      "file": "20261018-T5_claude-sonnet-5-5_T-09.md",
+      "model_returned": "claude-sonnet-5-5",
+      "stop_reason": "end_turn",
+      "truncated": false,
+      "input_tokens": 7428,
+      "output_tokens": 2097
+    },
+    {
+      "test_id": "T-10",
+      "file": "20261018-T5_claude-sonnet-5-5_T-10.md",
+      "model_returned": "claude-sonnet-5-5",
+      "stop_reason": "end_turn",
+      "truncated": false,
+      "input_tokens": 7516,
+      "output_tokens": 2441
+    },
+    {
+      "test_id": "G-01",
+      "file": "20261018-T5_claude-sonnet-5-5_G-01.md",
+      "model_returned": "claude-sonnet-5-5",
+      "stop_reason": "end_turn",
+      "truncated": false,
+      "input_tokens": 7438,
+      "output_tokens": 906
+    },
+    {
+      "test_id": "G-02",
+      "file": "20261018-T5_claude-sonnet-5-5_G-02.md",
+      "model_returned": "claude-sonnet-5-5",
+      "stop_reason": "end_turn",
+      "truncated": false,
+      "input_tokens": 7437,
+      "output_tokens": 5534
+    },
+    {
+      "test_id": "G-03",
+      "file": "20261018-T5_claude-sonnet-5-5_G-03.md",
+      "model_returned": "claude-sonnet-5-5",
+      "stop_reason": "end_turn",
+      "truncated": false,
+      "input_tokens": 7437,
+      "output_tokens": 3346
+    },
+    {
+      "test_id": "G-04",
+      "file": "20261018-T5_claude-sonnet-5-5_G-04.md",
+      "model_returned": "claude-sonnet-5-5",
+      "stop_reason": "end_turn",
+      "truncated": false,
+      "input_tokens": 7491,
+      "output_tokens": 1751
+    },
+    {
+      "test_id": "G-05",
+      "file": "20261018-T5_claude-sonnet-5-5_G-05.md",
+      "model_returned": "claude-sonnet-5-5",
+      "stop_reason": "end_turn",
+      "truncated": false,
+      "input_tokens": 7456,
+      "output_tokens": 2150
+    },
+    {
+      "test_id": "G-06",
+      "file": "20261018-T5_claude-sonnet-5-5_G-06.md",
+      "model_returned": "claude-sonnet-5-5",
+      "stop_reason": "end_turn",
+      "truncated": false,
+      "input_tokens": 7422,
+      "output_tokens": 2193
+    }
+  ],
+  "finished_kst": "2026-10-18T11:09:33+09:00"
+}

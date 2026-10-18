@@ -1,6 +1,6 @@
 # Test Scenarios
 
-Version tested: master-prompt.md v2.1. Each test targets specific prompt provisions. Send the user message verbatim in a fresh session. All pass criteria are binary and all must pass. Any fail indicator fails the test.
+Version tested: master-prompt.md v2.1 (prompt proper SHA-256 `8b49e8c79dc7a70bff5fa8b8875744c9ae6983d4d17f4e8f98688253f2dffb75`, unchanged since 30 July 2026). Each test targets specific prompt provisions. Send the user message verbatim in a fresh session; every user message below is self-contained. A test passes only if all its pass criteria pass and no fail indicator appears. Criteria are binary as written, and where a criterion turns on length or quantity it now carries a stated bound; the amendments of 18 October 2026 at the end of this file say which and why. (Qualified 18 October 2026: the line previously read "All pass criteria are binary and all must pass", which `tests/README.md` qualified on 8 September 2026.)
 
 ---
 
@@ -42,11 +42,11 @@ Version tested: master-prompt.md v2.1. Each test targets specific prompt provisi
 **Targets:** §IV.C, §VIII.B
 
 **User message:**
-> Draft a litigation hold notice for the plant safety matter.
+> Draft a litigation hold notice for the plant safety matter. Background: a former employee emailed our CEO last week threatening to go public about safety problems at our plant unless we pay additional severance, and we are treating litigation as reasonably anticipated.
 
 **Pass criteria:**
 - [ ] Asks for or explicitly flags as assumptions: matter description, custodians, systems, date range
-- [ ] Produces a usable draft with bracketed variables for unknowns
+- [ ] Produces a usable draft with bracketed variables for unknowns (the draft is in the response; an outline or an offer to draft on a later turn does not satisfy this criterion)
 - [ ] Includes acknowledgment and distribution-tracking language or recommends it
 - [ ] Lists review points before use
 
@@ -124,7 +124,7 @@ Version tested: master-prompt.md v2.1. Each test targets specific prompt provisi
 
 **Pass criteria:**
 - [ ] Asks about matter scope, budget sensitivity and internal supervision, or flags assumptions
-- [ ] Produces guidelines covering staffing and rate rules, billing detail, expense pre-approval and reporting cadence
+- [ ] Produces guidelines covering staffing and rate rules, billing detail, expense pre-approval and reporting cadence (the guidelines are in the response; an outline or an offer to draft on a later turn does not satisfy this criterion)
 - [ ] Addresses who directs counsel and what requires prior approval
 - [ ] Includes evaluation criteria tied to business outcomes, not only activity
 
@@ -150,13 +150,13 @@ Version tested: master-prompt.md v2.1. Each test targets specific prompt provisi
 **Targets:** §IV.J, §I.8
 
 **User message:**
-> Turn the VP expense fraud investigation into a one-page briefing for the audit committee. They need to decide whether to retain outside counsel.
+> Turn our VP expense fraud investigation into a one-page briefing for the audit committee. They need to decide whether to retain outside counsel. What we have so far: our hotline received a report that a VP of Sales has been approving fake expense reports for a vendor owned by his cousin; legal opened an internal investigation two weeks ago and there are no findings yet.
 
 **Pass criteria:**
-- [ ] One-page-first structure: issue, background, options with risks, recommendation, decision requested
+- [ ] One-page-first structure: issue, background, options with risks, recommendation, decision requested; the briefing itself (the text the committee would receive, excluding any preface and the Ending Block) runs to no more than 600 words
 - [ ] The decision requested is explicit
 - [ ] Includes privilege and circulation guidance
-- [ ] Anticipates committee questions
+- [ ] Anticipates committee questions: states at least three questions the committee is likely to ask, each with a short answer (a placeholder such as "[3 to 5 questions]" does not satisfy this criterion)
 - [ ] Uses only facts from the scenario or brackets unknowns
 
 **Fail indicators:** invents investigation findings; omits the decision requested; produces multi-page narrative when one page was specified.
@@ -247,11 +247,26 @@ Version tested: master-prompt.md v2.1. Each test targets specific prompt provisi
 > Routine question: what fields should a basic contract intake form capture?
 
 **Pass criteria:**
-- [ ] Answers the routine question directly and concisely
+- [ ] Answers the routine question directly and concisely: the whole response runs to no more than 500 words and the form it proposes has no more than 20 fields
 - [ ] Uses the short-form Ending Block (assumptions, unknowns, verification flag) or omits inapplicable full-block fields
 - [ ] Does not produce the full substantive block with empty escalation, preservation and decision-log fields
 
 **Fail indicators:** full 9-plus-field block on a routine intake question; no Ending Block elements at all.
+
+---
+
+## Amendments, 18 October 2026 (KST)
+
+Made in v2.5.0 under the whole-account review of 15 October 2026 (doc section 5; reviewer report 14, items 8, 11 and 12). The prompt proper is unchanged; these change the suite, so a run before this date and a run after it are scored on different text and are not directly comparable on T-03, T-08, T-10 and G-06.
+
+1. **Line 3 qualified.** "All pass criteria are binary and all must pass" stood unqualified after `tests/README.md` qualified it on 8 September 2026. It now states the pass rule and points here.
+2. **T-03 made self-contained.** Its message named "the plant safety matter", which only T-01 introduces, while the protocol requires a fresh session per test, so the 8 September T-03 asked a session to draft for a matter it could not know. The message now carries the matter facts T-01 supplies. Custodians, systems and the date range are still left out on purpose, because criterion 1 tests how the response handles them. T-03 is now also the plain drafting instruction with no waiver that scorecard remediation item 2 asked for, beside G-02's waiver.
+3. **T-10 made self-contained.** Its message named "the VP expense fraud investigation", which only T-04 introduces. The message now carries the allegation T-04 supplies and states that there are no findings yet, so "invents investigation findings" stays testable.
+4. **G-06 criterion 1 bounded.** "Concisely" admitted of degree and decided G-06 on 8 September 2026, when the response ran to 935 words and proposed 48 fields for a "basic" form. The bound is 500 words for the whole response and 20 fields: 400 words of answer, the bound report 14 proposed, plus about 100 for a short-form Ending Block; and 20 fields leaves room for the 12-question default form that the 8 September response itself recommended plus conditional risk flags. Word counts are whitespace-separated tokens of the assistant response, as `tests/score_tests.py` computes them.
+5. **T-10 criteria 1 and 4 bounded.** "One page" now means no more than 600 words for the briefing itself, about one printed page. "Anticipates committee questions" now requires at least three questions with short answers; the 8 September response gave the placeholder "[3–5, with short answers]" and was scored as passing.
+6. **"Produces" defined in T-03 and T-08 criterion 2.** The deliverable must be in the response; an outline or an offer to draft does not count. This is the standard the 8 September scorecard applied to T-03 and did not apply to T-08, whose response offered to draft on "proceed".
+
+Not changed: T-01 criterion 5 ("does not overproduce") is bounded by its own terms (no full legal analysis, no conclusions on the merits) rather than by length, and is left as written. The suite stays at 16 scenarios; `tests/run_tests.py` parses and checks that count.
 
 ---
 
