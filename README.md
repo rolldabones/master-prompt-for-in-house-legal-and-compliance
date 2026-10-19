@@ -1,8 +1,8 @@
 # Master Prompt for In-House Legal & Compliance
 
-**Version 2.5.0 · 2026-10-18 · Changes: [CHANGELOG.md](CHANGELOG.md)**
+**Version 2.5.1 · 2026-10-19 · Changes: [CHANGELOG.md](CHANGELOG.md)**
 
-**Status:** [⇥ pending review], as at 18 October 2026. Test decision **BLOCK** on every run: 18 October 2026 on `claude-opus-5-5` and `claude-sonnet-5-5`, each scored by the other model, and 8 September 2026 on `claude-opus-5`. No run has cleared the release thresholds. See [Testing](#testing).
+**Status:** [↻ draft], as at 19 October 2026, after Michael Paik's review of that date, which concurs. Test decision **BLOCK** on every run: 18 October 2026 on `claude-opus-5-5` and `claude-sonnet-5-5`, each scored by the other model, and 8 September 2026 on `claude-opus-5`. No run has cleared the release thresholds. See [Testing](#testing).
 
 A system prompt that turns a general-purpose AI assistant into a disciplined in-house legal and compliance assistant. It supports in-house counsel, compliance officers, legal operations, HR, procurement, internal audit, executives and business stakeholders in handling legal and compliance matters with discipline, clarity and practical usefulness.
 
@@ -69,7 +69,7 @@ The prompt ships with a behavioral test suite in [`tests/`](tests/): ten mode te
 
 **The result, 8 September 2026:** `claude-opus-5`, scored by the same model, self-administered developer testing, **5 of 6 guardrail tests and 7 of 10 mode tests as recorded. Decision: BLOCK.** The review of 15 October 2026 found T-08 and T-10 failing on the standard the scorecard applied to T-03, which makes the mode count 5 of 10 on a consistent reading; BLOCK holds on every reading. The failures are named in [`tests/scorecard.md`](tests/scorecard.md) and every response is published verbatim in [`tests/transcripts/`](tests/transcripts/). None of the 16 responses contained fabricated authority, an invented fact or a suggestion to destroy evidence; the automatic release block did not trigger.
 
-**The result, 18 October 2026:** `claude-opus-5-5` scored by `claude-sonnet-5-5`, guardrail 4 of 6 and mode 6 of 10; `claude-sonnet-5-5` scored by `claude-opus-5-5`, guardrail 5 of 6 and mode 5 of 10. **Decision on both: BLOCK**, LLM-scored developer testing, reviewer pending (Michael Paik). G-06 fails on both models. The session review dissents from the automatic-block flag on the opus G-03 (the authorities are real and flagged for verification) and records T-08, T-09 and T-10 as not exercised, because a single-turn case cannot reach the drafting its criteria test while the model follows the Informed Intent Gate. No reading clears the thresholds. Details, sources and known defects K1 to K4 are in [`tests/scorecard.md`](tests/scorecard.md); scores are in [`tests/scores/`](tests/scores/).
+**The result, 18 October 2026:** `claude-opus-5-5` scored by `claude-sonnet-5-5`, guardrail 4 of 6 and mode 6 of 10; `claude-sonnet-5-5` scored by `claude-opus-5-5`, guardrail 5 of 6 and mode 5 of 10. **Decision on both: BLOCK**, LLM-scored developer testing, reviewed by Michael Paik on 19 October 2026 (KST), who concurs. G-06 fails on both models. The session review dissents from the automatic-block flag on the opus G-03 (the authorities are real and flagged for verification) and records T-08, T-09 and T-10 as not exercised, because a single-turn case cannot reach the drafting its criteria test while the model follows the Informed Intent Gate. No reading clears the thresholds. Details, sources and known defects K1 to K4 are in [`tests/scorecard.md`](tests/scorecard.md); scores are in [`tests/scores/`](tests/scores/).
 
 No scorecard here satisfies the release condition: no run passed, and a scorecard recording a BLOCK cannot be read as evidence that the gate was cleared.
 
@@ -90,7 +90,7 @@ Nearest neighbors:
 
 ## How to Cite
 
-> Paik, Son-U Michael. *Master Prompt for In-House Legal & Compliance*, v2.5.0. GRC Solutions Korea, 2026. https://github.com/rolldabones/master-prompt-for-in-house-legal-and-compliance
+> Paik, Son-U Michael. *Master Prompt for In-House Legal & Compliance*, v2.5.1. GRC Solutions Korea, 2026. https://github.com/rolldabones/master-prompt-for-in-house-legal-and-compliance
 
 A machine-readable citation is in [CITATION.cff](CITATION.cff).
 

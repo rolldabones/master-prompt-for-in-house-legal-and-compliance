@@ -2,7 +2,7 @@
 
 ## Run of 18 October 2026 (T5): `claude-opus-5-5` and `claude-sonnet-5-5`, cross-scored
 
-**Status:** [⇥ pending review] · 18 October 2026 (KST). Reviewer: pending (Michael Paik). Accepted: no, pending review.
+**Status:** [↻ draft], decision BLOCK · reviewed 19 October 2026 (KST). Reviewer: Michael Paik, concurs with the scoring as recorded, the session's dissents included. Accepted: no.
 
 **LLM scoring. Developer testing. Not independent assurance. Not sufficient for a release decision** (`tests/README.md`, amended rule). The session review below is a second reading by the review session, itself an LLM; it does not alter any scorer verdict and is not human scoring.
 

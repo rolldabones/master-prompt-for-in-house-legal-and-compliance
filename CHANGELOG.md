@@ -1,5 +1,13 @@
 # Changelog
 
+## v2.5.1 (2026-10-19)
+
+Patch, from the weekly maintenance sweep of 19 October 2026 (KST) and Michael Paik's review of the T5 runs, completed 19 October 2026 (KST), on which he concurs with the scoring as recorded. The prompt proper (everything below the first horizontal rule of `master-prompt.md`) is unchanged byte for byte; only the status line above it moves.
+
+- **Runs of 18 October 2026 reviewed.** The reviewer concurs with the scoring as recorded, the session's dissents included. Decision BLOCK on both runs stands.
+- **Status `[⇥ pending review]` becomes `[↻ draft]`** in the README, the `master-prompt.md` status line and the scorecard, on Michael Paik's ruling of 19 October 2026: reviewed and blocked, the prompt is incomplete until a run clears the thresholds. `tests/README.md` records the reviewer.
+- README masthead, How to Cite and `CITATION.cff` to v2.5.1. The harness stays `run_tests.py` v2.5.0; the prompt stays Version 2.1.
+
 ## v2.5.0 (2026-10-18)
 
 Minor: the test harness and the test suite change; the prompt proper does not. Session T5 of the whole-account review of 15 October 2026 (doc section 5; reviewer report 14, items 2, 6 to 15 and 21 to 24). Released 18 October 2026 (KST). The suite was run on `claude-opus-5-5` and `claude-sonnet-5-5` the same day, each scored by the other model. **Decision on both: BLOCK.** The gate is not cleared.
