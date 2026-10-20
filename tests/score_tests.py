@@ -4,7 +4,7 @@
 Reads the transcripts of one run, the pass criteria and fail indicators of each
 scenario in tests/scenarios.md, and asks a scorer model for a JSON verdict per
 criterion. The scorer model must differ from the tested model; the script refuses
-otherwise (determination D7 of the review of 15 October 2026: no model grades
+otherwise (rule recorded on 15 October 2026 and in tests/README.md: no model grades
 itself). Applies the pass thresholds of tests/README.md and prints the decision.
 
 LABEL, carried on every artifact this script writes (tests/README.md, amended rule):
@@ -202,7 +202,7 @@ def main() -> None:
     args = ap.parse_args()
 
     if args.tested_model.strip() == args.scorer_model.strip():
-        sys.exit("ERROR - Guardrail Violation: scorer model equals tested model; no model grades itself (D7)")
+        sys.exit("ERROR - Guardrail Violation: scorer model equals tested model; no model grades itself")
 
     tlabel = re.sub(r"[^A-Za-z0-9._-]", "-", args.tested_model)
     slabel = re.sub(r"[^A-Za-z0-9._-]", "-", args.scorer_model)

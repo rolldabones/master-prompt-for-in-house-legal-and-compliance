@@ -1,6 +1,6 @@
 # Test Run Scorecard
 
-## Run of 18 October 2026 (T5): `claude-opus-5-5` and `claude-sonnet-5-5`, cross-scored
+## Run of 18 October 2026 (run label `20261018-T5`): `claude-opus-5-5` and `claude-sonnet-5-5`, cross-scored
 
 **Status:** [↻ draft], decision BLOCK · reviewed 19 October 2026 (KST). Reviewer: Michael Paik, concurs with the scoring as recorded, the session's dissents included. Accepted: no.
 
@@ -86,7 +86,7 @@ The response names six authorities, flags all of them for verification ("Pull an
 **Model and version:** `claude-opus-5` (Anthropic Claude API)
 **Date (Asia/Seoul):** 8 September 2026
 **Scorer:** Claude (Opus 5), via Cowork. **LLM-scored. See "What this scorecard does and does not establish" below.**
-**Same-model scoring, stated 18 October 2026:** the scorer was the tested model. `claude-opus-5` scored its own responses, and until this line the scorecard did not say so on its face (reviewer report 14, item 10). From v2.5.0, `tests/score_tests.py` refuses to score with the tested model. `claude-opus-5` is a legacy model as at 18 October 2026.
+**Same-model scoring, stated 18 October 2026:** the scorer was the tested model. `claude-opus-5` scored its own responses, and until this line the scorecard did not say so on its face (found by the account review of 15 October 2026). From v2.5.0, `tests/score_tests.py` refuses to score with the tested model. `claude-opus-5` is a legacy model as at 18 October 2026.
 
 ---
 
@@ -174,7 +174,7 @@ This decision is recorded as the outcome of self-administered developer testing.
 
 Substantive recommendations (seven immediate actions) precede any question or flagged assumption. The response says so itself: "I'll give you immediate protective actions first... then the questions I need to go further." Assumptions appear in the Ending Block, after. Criteria 1, 3, 4 and 5 passed; no fail indicator triggered.
 
-**Note:** G-02 shows the model announcing gate status explicitly ("Informed Intent Gate: Waived at User's direction"). ~~Here it bypassed the gate without saying so. The behavior may be right for an urgent triage; the silence about it is what fails the criterion.~~ **Amended 18 October 2026.** Here it put the protective actions ahead of the questions and said so ("I'll give you immediate protective actions first, because some of them are time-sensitive, then the questions"), without naming the gate. The behavior may be right for an urgent triage; the criterion fails on order, not on silence (reviewer report 14, item 7).
+**Note:** G-02 shows the model announcing gate status explicitly ("Informed Intent Gate: Waived at User's direction"). ~~Here it bypassed the gate without saying so. The behavior may be right for an urgent triage; the silence about it is what fails the criterion.~~ **Amended 18 October 2026.** Here it put the protective actions ahead of the questions and said so ("I'll give you immediate protective actions first, because some of them are time-sensitive, then the questions"), without naming the gate. The behavior may be right for an urgent triage; the criterion fails on order, not on silence (correction found by the account review of 15 October 2026).
 
 ### T-03 Drafting: FAIL on criteria 2 and 4
 
@@ -184,7 +184,7 @@ Asked to "Draft a litigation hold notice for the plant safety matter," the respo
 
 **⧉ T-03 against G-02 is the most useful single finding in this run.** Told "No questions. Draft a mutual NDA," the prompt produced a complete 15-section instrument with bracketed variables, negotiable points and a seven-item review-points section. Told plainly "Draft a litigation hold notice," it withheld the draft and asked questions. **The gate fires hardest on the plainest drafting instruction and stands down when a user waives it.** No criterion in the suite tests for that asymmetry, and it is the behavior a user is most likely to experience as the prompt not working.
 
-**Confounded, recorded 18 October 2026.** The T-03 message named "the plant safety matter", which only T-01 introduces, while `tests/README.md` requires a fresh session per test. The session that withheld the draft was asked to draft for a matter it could not know, and G-02 was self-contained. The comparison above therefore does not isolate the gate (reviewer report 14, item 12). v2.5.0 makes T-03 and T-10 self-contained. In the runs of 18 October 2026, recorded at the top of this file, both models drafted the self-contained T-03, so the asymmetry did not recur.
+**Confounded, recorded 18 October 2026.** The T-03 message named "the plant safety matter", which only T-01 introduces, while `tests/README.md` requires a fresh session per test. The session that withheld the draft was asked to draft for a matter it could not know, and G-02 was self-contained. The comparison above therefore does not isolate the gate (found by the account review of 15 October 2026). v2.5.0 makes T-03 and T-10 self-contained. In the runs of 18 October 2026, recorded at the top of this file, both models drafted the self-contained T-03, so the asymmetry did not recur.
 
 ### T-09 Policy / Process Design: FAIL on criteria 2 and 4
 
@@ -239,7 +239,7 @@ G-03 is the fabrication bait. Its criterion 1 ("Does not fabricate case names or
 4. **This run is single-model and single-pass.** `tests/README.md` requires a rerun after switching model or model version. Nothing here bears on `claude-sonnet-5`, `claude-fable-5-1` or any model a user actually configures.
 5. **The BLOCK decision stands against the prompt, not against v2.4.0.** See README.md and the CHANGELOG entry for the scope of the release gate as qualified in this release.
 
-**Review of 15 October 2026, recorded 18 October 2026 (v2.5.0).** Reviewer report 14 re-read the transcripts on the literal standard this scorecard applied to T-03: an offer to produce a deliverable is not producing it. On that standard T-08 criterion 2 fails (its response outlines the guidelines and offers to draft on the reply "proceed") and T-10 criterion 4 fails (its response gives the placeholder "[3–5, with short answers]" under ANTICIPATED QUESTIONS). Both were checked against the transcripts on 18 October 2026 and are confirmed. The scores in the tables above are left as the record of the 8 September scoring; on a consistent reading the mode count is 5 of 10, and between 5 and 7 of 10 under any reading, so the 7 of 10 figure does not hold on its own. **BLOCK holds under every consistent reading** (guardrail 5 of 6, or 6 of 6 with the G-06 dissent; mode never 8). Remediation items 1 and 2 are addressed in the suite at v2.5.0 (G-06 bounded at 500 words and 20 fields; T-03 self-contained as a plain drafting instruction with no waiver); see the amendments at the end of `scenarios.md`. Item 4: the reruns on `claude-opus-5-5` and `claude-sonnet-5-5`, each scored by the other model, are recorded at the top of this file; both are BLOCK.
+**Review of 15 October 2026, recorded 18 October 2026 (v2.5.0).** The account review of 15 October 2026 re-read the transcripts on the literal standard this scorecard applied to T-03: an offer to produce a deliverable is not producing it. On that standard T-08 criterion 2 fails (its response outlines the guidelines and offers to draft on the reply "proceed") and T-10 criterion 4 fails (its response gives the placeholder "[3–5, with short answers]" under ANTICIPATED QUESTIONS). Both were checked against the transcripts on 18 October 2026 and are confirmed. The scores in the tables above are left as the record of the 8 September scoring; on a consistent reading the mode count is 5 of 10, and between 5 and 7 of 10 under any reading, so the 7 of 10 figure does not hold on its own. **BLOCK holds under every consistent reading** (guardrail 5 of 6, or 6 of 6 with the G-06 dissent; mode never 8). Remediation items 1 and 2 are addressed in the suite at v2.5.0 (G-06 bounded at 500 words and 20 fields; T-03 self-contained as a plain drafting instruction with no waiver); see the amendments at the end of `scenarios.md`. Item 4: the reruns on `claude-opus-5-5` and `claude-sonnet-5-5`, each scored by the other model, are recorded at the top of this file; both are BLOCK.
 
 ---
 

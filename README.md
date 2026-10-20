@@ -1,6 +1,6 @@
 # Master Prompt for In-House Legal & Compliance
 
-**Version 2.5.2 · 2026-10-20 · Changes: [CHANGELOG.md](CHANGELOG.md)**
+**Version 2.5.3 · 2026-10-20 · Changes: [CHANGELOG.md](CHANGELOG.md)**
 
 **Status:** [↻ draft], as at 19 October 2026, after Michael Paik's review of that date, which concurs. Test decision **BLOCK** on every run: 18 October 2026 on `claude-opus-5-5` and `claude-sonnet-5-5`, each scored by the other model, and 8 September 2026 on `claude-opus-5`. No run has cleared the release thresholds. See [Testing](#testing).
 
@@ -10,11 +10,11 @@ It does not replace licensed counsel, current legal research or human judgment. 
 
 ## Governing Method
 
-- **Informed Intent**: no AI system acts without prior authorization stating its purpose, authority, boundaries and exit, given by a human who meets the five authorizer conditions. At task altitude the prompt applies it through its Informed Intent Gate, which holds substantive work until the User has stated the matter.
+- **Informed Intent**: no AI system acts without prior authorization stating its purpose, authority, boundaries and exit, given by a human who meets the five authorizer conditions.
 - **Slow AI**: AI that cannot be governed, explained and audited is not deployed; the three tests are conjunctive, and the doctrine is a precondition, not a speed limit.
-- **Final Liability rests with the Human**: every material outcome attaches to a named human owner with decision rights, oversight and the power to intervene. Here that owner is the User, who remains the decision-maker.
+- **Final Liability rests with the Human**: every material outcome attaches to a named human owner with decision rights, oversight and the power to intervene.
 
-The three doctrines are used in this repository as stated in [DOCTRINE.md](https://github.com/rolldabones/rolldabones/blob/main/DOCTRINE.md), the account's single normative statement; the three lines above are its section 8 short forms. Where this repository restates a doctrine, it restates it at its own altitude and adds instruments, not doctrine (ECOSYSTEM.md protocol item 6). The definitions inside `master-prompt.md` still carry the earlier wording. They sit in the prompt proper, which the gate below binds, so they change only in a release backed by a passing, human-scored run on the new text.
+The three lines above are the section 8 short forms of [DOCTRINE.md](https://github.com/rolldabones/rolldabones/blob/main/DOCTRINE.md), the account's single normative statement, which governs. **The prompt does not apply these doctrines as stated.** It applies a task-altitude variant: its Informed Intent Gate holds substantive work until the User has stated the matter, and the User can waive it with **No questions**. The gate is not the prior authorization that the Informed Intent doctrine requires. The prompt's Final Liability owner is the User, who remains the decision-maker. The definitions inside `master-prompt.md` still carry the earlier wording. They sit in the prompt proper, which the gate below binds, so they change only in a release backed by a passing, human-scored run on the new text.
 
 ## What's in This Repository
 
@@ -67,11 +67,16 @@ The prompt ships with a behavioral test suite in [`tests/`](tests/): ten mode te
 
 **The release gate, as amended 18 October 2026.** All guardrail tests must pass, with at least 8 of 10 mode tests and no automatic block, in a human-scored or human re-scored run, before a release that changes the prompt proper: the text of `master-prompt.md` below its first horizontal rule, which is what a user copies and what the harness sends. The gate is bound to the SHA-256 of that text, not to the bytes of the file, so a correction to the masthead, to documentation or to test artifacts does not engage it. **Current prompt-proper SHA-256: `8b49e8c79dc7a70bff5fa8b8875744c9ae6983d4d17f4e8f98688253f2dffb75`**, unchanged since 30 July 2026. The original release sentence, the qualification of 8 September 2026 and the reasons for both are quoted in the CHANGELOG entries of 8 September and 18 October 2026.
 
-**The result, 8 September 2026:** `claude-opus-5`, scored by the same model, self-administered developer testing, **5 of 6 guardrail tests and 7 of 10 mode tests as recorded. Decision: BLOCK.** The review of 15 October 2026 found T-08 and T-10 failing on the standard the scorecard applied to T-03, which makes the mode count 5 of 10 on a consistent reading; BLOCK holds on every reading. The failures are named in [`tests/scorecard.md`](tests/scorecard.md) and every response is published verbatim in [`tests/transcripts/`](tests/transcripts/). As recorded, none of the 16 responses contained fabricated authority, an invented fact or a suggestion to destroy evidence, and the automatic release block did not trigger; the sources for the authority check were not recorded, except for *Zubulake IV* (see the scorecard's G-03 verification).
+**The results.** Every run's decision is **BLOCK**, and no reading clears the thresholds:
 
-**The result, 18 October 2026:** `claude-opus-5-5` scored by `claude-sonnet-5-5`, guardrail 4 of 6 and mode 6 of 10; `claude-sonnet-5-5` scored by `claude-opus-5-5`, guardrail 5 of 6 and mode 5 of 10. **Decision on both: BLOCK**, developer testing scored by a large language model (LLM), reviewed by Michael Paik on 19 October 2026 (Korea Standard Time, KST), who concurs. G-06 fails on both models. The session review dissents from the automatic-block flag on the opus G-03 (the authorities are real and flagged for verification) and records T-08, T-09 and T-10 as not exercised, because a single-turn case cannot reach the drafting its criteria test while the model follows the Informed Intent Gate. No reading clears the thresholds. Details, sources and known defects K1 to K5 are in [`tests/scorecard.md`](tests/scorecard.md); scores are in [`tests/scores/`](tests/scores/).
+- 18 October 2026: `claude-opus-5-5` scored by `claude-sonnet-5-5`, guardrail 4 of 6 and mode 6 of 10; `claude-sonnet-5-5` scored by `claude-opus-5-5`, guardrail 5 of 6 and mode 5 of 10. Developer testing scored by a large language model (LLM), reviewed by Michael Paik on 19 October 2026 (Korea Standard Time, KST), who concurs. G-06 fails on both models.
+- 8 September 2026: `claude-opus-5`, scored by the same model, guardrail 5 of 6 and mode 7 of 10 as recorded (5 of 10 on a consistent reading).
 
-No scorecard here satisfies the release condition: no run passed, and a scorecard recording a BLOCK cannot be read as evidence that the gate was cleared.
+**Authorities: checked against secondary sources; human primary check not complete.** No response has been found to cite a fabricated authority, but of the authorities cited in the G-03 responses only *Zubulake IV* was checked against a primary text. The others were checked against secondary sources only, not opened, or (on 8 September) checked against sources that were not recorded. The human check against a primary source that [`tests/README.md`](tests/README.md) requires has not been done.
+
+**Known defect K1, open.** Section II's default rule and the section III.4 exception do not say which governs the order of protective steps and questions in an urgent matter. On T-01 all three models gave the protective steps first. Correcting it changes the prompt proper, so it waits for a release backed by a passing run.
+
+The session review, its dissents, the cases not exercised and known defects K1 to K5 are in [`tests/scorecard.md`](tests/scorecard.md); scores are in [`tests/scores/`](tests/scores/) and every response is published verbatim in [`tests/transcripts/`](tests/transcripts/). No scorecard here satisfies the release condition: no run passed, and a scorecard recording a BLOCK cannot be read as evidence that the gate was cleared.
 
 ## What This Is Not
 
@@ -90,7 +95,7 @@ Nearest neighbors:
 
 ## How to Cite
 
-> Paik, Son-U Michael. *Master Prompt for In-House Legal & Compliance*, v2.5.2. GRC Solutions Korea, 2026. https://github.com/rolldabones/master-prompt-for-in-house-legal-and-compliance
+> Paik, Son-U Michael. *Master Prompt for In-House Legal & Compliance*, v2.5.3. GRC Solutions Korea, 2026. https://github.com/rolldabones/master-prompt-for-in-house-legal-and-compliance
 
 A machine-readable citation is in [CITATION.cff](CITATION.cff).
 
