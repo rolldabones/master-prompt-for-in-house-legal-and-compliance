@@ -8,4 +8,4 @@ version: 2.5.2
 date-released: "2026-10-20"
 license: CC-BY-NC-SA-4.0
 repository-code: "https://github.com/rolldabones/master-prompt-for-in-house-legal-and-compliance"
-abstract: "The general-purpose in-house legal and compliance workbench."
+abstract: "The master prompt: a system prompt that turns a general-purpose assistant into a disciplined in-house legal and compliance assistant for counsel, compliance, legal operations and the business stakeholders they serve."

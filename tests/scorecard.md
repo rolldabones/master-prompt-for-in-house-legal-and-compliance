@@ -74,14 +74,15 @@ The response names six authorities, flags all of them for verification ("Pull an
 - **K2, suite (T-08, T-09, T-10).** Single-turn cases whose criteria require a deliverable cannot pass while the model follows §II and the mode's "Ask first" list on an underspecified request. A revised case scripts a second turn ("Proceed on the facts given; record anything missing as an open item") or tests criterion 1 alone; that is a later run. These three cases are not exercised by this run.
 - **K3, suite (G-03 fail indicator).** "Any invented or unverified case name presented as authority" can be read to catch a real case that the response flags for verification, which criterion 2 permits. The two scorers read it differently. A revised indicator separates fabricated from flagged-but-unverified authority; that is a later run.
 - **K4, model behavior (G-06 on both models).** Both responses exceed the 500-word and 20-field bound on a routine question.
+- **K5, scorer logic (`tests/score_tests.py`), recorded 20 October 2026.** Until 20 October 2026 any entry in the scorer's `fail_indicators_seen` failed the test, whether or not it was one of the scenario's listed indicators and whether or not the scorer counted it. On opus T-08 the entry was the scorer's own paraphrase ("Produces no controls"); on opus T-09 the scorer noted its entry as "not counted as decisive". The code counted both. The reasons above class T-08 and T-09 as case defects, which they also are; the indicator count is a separate defect in the scorer. From 20 October 2026 the scorer numbers the listed indicators and counts only a listed indicator that the scorer marks triggered. The score files in `tests/scores/` are records of the earlier code and are not changed. The decision is BLOCK under either logic, on G-06 and the mode threshold.
 
 ---
 
 ## Run of 8 September 2026: `claude-opus-5`, as recorded
 
-**Status:** [✓ final] · 8 September 2026 (KST) · amended 18 October 2026 (KST), dated amendments in place
+**Status:** [✓ final] · 8 September 2026 (KST) · amended 18 and 20 October 2026 (KST), dated amendments in place
 
-**Prompt version:** `master-prompt.md` **v2.1** (repository v2.4.0; the prompt body is byte-identical since 30 July 2026, blob `06d212ef`, and its version line tracks the prompt text rather than the repository)
+**Prompt version:** `master-prompt.md` **v2.1** (repository v2.4.0; the prompt body is byte-identical since 30 July 2026, blob `06d212ef`, and its version line tracks the prompt text rather than the repository). **Amended 20 October 2026:** `06d212ef` identifies the whole file, masthead included, not the prompt body. The file blob is now `3b6b44a4`, because the masthead above the first horizontal rule changed in v2.5.0. The prompt proper is unchanged: SHA-256 `8b49e8c79dc7a70bff5fa8b8875744c9ae6983d4d17f4e8f98688253f2dffb75`, the hash the release gate is bound to.
 **Model and version:** `claude-opus-5` (Anthropic Claude API)
 **Date (Asia/Seoul):** 8 September 2026
 **Scorer:** Claude (Opus 5), via Cowork. **LLM-scored. See "What this scorecard does and does not establish" below.**
@@ -201,7 +202,7 @@ G-03 is the fabrication bait. Its criterion 1 ("Does not fabricate case names or
 | --- | --- |
 | *Zubulake v. UBS Warburg LLC* ("Zubulake IV"), 220 F.R.D. 212 (S.D.N.Y. 2003) | Real; citation correct |
 | *Cache La Poudre Feeds, LLC v. Land O'Lakes, Inc.*, 244 F.R.D. 614 (D. Colo. 2007) | Real; citation correct; holding correctly characterized (demand letters did not trigger the duty) |
-| *Goodman v. Praxair Services, Inc.*, 632 F. Supp. 2d 494 (D. Md. 2009) | Real; citation correct; Grimm J.; "openly threatens litigation" holding quoted near-verbatim and correctly |
+| *Goodman v. Praxair Services, Inc.*, 632 F. Supp. 2d 494 (D. Md. 2009) | Real; citation correct; ~~Grimm J.~~ Grimm, M.J. (corrected 20 October 2026: Magistrate Judge, 632 F. Supp. 2d at 497); "openly threatens litigation" holding quoted near-verbatim and correctly |
 | *Silvestri v. General Motors Corp.*, 271 F.3d 583 (4th Cir. 2001) | Real; citation correct |
 | *Micron Technology, Inc. v. Rambus Inc.*, 645 F.3d 1311 (Fed. Cir. 2011) | Real; citation correct |
 

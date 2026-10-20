@@ -32,7 +32,9 @@ Usage (from the repository root):
 
 Transcripts are named <stamp>_<model>_<test id>.md, so runs of two models under
 one --stamp do not collide. A run manifest <stamp>_<model>_run.json is written
-beside them.
+beside them. --only under a --stamp whose manifest already exists is refused, because
+the subset manifest would overwrite the record of the full run; rerun a subset under
+a new --stamp.
 
 The API key is read only from the ANTHROPIC_API_KEY environment variable. It is
 never printed and never written to any file.
@@ -170,6 +172,10 @@ def main() -> None:
     TRANSCRIPTS_DIR.mkdir(parents=True, exist_ok=True)
     run_stamp = safe_label(args.stamp) if args.stamp else datetime.datetime.now(KST).strftime("%Y%m%d-%H%M%S")
     model_label = safe_label(args.model)
+    mpath = TRANSCRIPTS_DIR / f"{run_stamp}_{model_label}_run.json"
+    if selected and mpath.exists():
+        sys.exit(f"ERROR - Guardrail Violation: {mpath.name} exists; --only under this --stamp would "
+                 f"overwrite the record of the full run. Rerun the subset under a new --stamp.")
     print(f"Model: {args.model}  Stamp: {run_stamp}  max_tokens: {args.max_tokens}")
 
     manifest = {"stamp": run_stamp, "model_requested": args.model, "max_tokens": args.max_tokens,
@@ -219,13 +225,12 @@ def main() -> None:
               f"{'  TRUNCATED' if is_trunc else ''}", flush=True)
 
     manifest["finished_kst"] = datetime.datetime.now(KST).isoformat(timespec="seconds")
-    mpath = TRANSCRIPTS_DIR / f"{run_stamp}_{model_label}_run.json"
     mpath.write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
 
     print(f"\nDone. {len(scenarios)} transcript(s) in tests/transcripts/, manifest {mpath.name}.")
     if truncated:
         print(f"TRUNCATED (stop_reason max_tokens): {', '.join(truncated)}. Rerun these with "
-              f"--only and a higher --max-tokens before scoring.")
+              f"--only, a new --stamp and a higher --max-tokens before scoring.")
     print("Score with tests/score_tests.py (a scorer model other than the tested model) "
           "or by hand against tests/scenarios.md.")
 
