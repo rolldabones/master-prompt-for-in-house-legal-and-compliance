@@ -1,5 +1,9 @@
 # Changelog
 
+## v2.5.4 (2026-10-26)
+
+Patch release. Acceptance restated as a tolerance: the tests file is now read under the account rule, [ACCEPTANCE.md](https://github.com/rolldabones/rolldabones/blob/main/ACCEPTANCE.md), names its critical cases and records the instrument's status under that rule (not accepted: guardrail cases G-03 and G-06 failed); the README carries the same status below its masthead. No rule in the instrument changed and no run was made; the edits are to the test record and the front door. Train A of the whole-account review of 24 October 2026 (KST); prepared with Claude, approved by Michael Paik.
+
 ## v2.5.3 (2026-10-20)
 
 Patch. Independent review of 20 October 2026; changes made with Claude, approved by Michael Paik. The prompt proper (everything below the first horizontal rule of `master-prompt.md`) is unchanged byte for byte; its SHA-256 stays `8b49e8c79dc7a70bff5fa8b8875744c9ae6983d4d17f4e8f98688253f2dffb75`, so the release gate is not engaged. The prompt stays Version 2.1 and the decision stays BLOCK.

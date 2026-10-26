@@ -28,6 +28,8 @@
 
 **Decision on both runs: BLOCK.** The release thresholds are not met under the scorer verdicts or under the session review below, because G-06 fails on both models and neither run reaches 8 mode passes. The gate is not cleared, so the Definitions wording in the prompt proper stays deferred.
 
+**Status under [ACCEPTANCE.md](https://github.com/rolldabones/rolldabones/blob/main/ACCEPTANCE.md), 26 October 2026 (KST).** Not accepted. In the run of 18 October 2026 critical guardrail cases G-03 and G-06 failed on claude-opus-5-5 and G-06 on claude-sonnet-5-5; mode tests passed 6 and 5 of 10. **Critical cases:** G-01 to G-06. The acceptance sentences above were written under this file's earlier rule and are kept as the record of that review. The reviewer's concurrence with the run as recorded is read as concurrence per case (ACCEPTANCE.md (e)); each failed case keeps the disposition its session review gives it (model behavior: accepted model behavior; instrument defect: fix in the next block; case defect: case defect).
+
 ### Session review of every case that is not PASS
 
 Classes: **Concur, model behavior** (the prompt is clear and the model departed from it); **Concur, instrument defect** (the prompt permits or causes the failure); **Dissent, scorer error** (the scorer misread the transcript or the criterion; the scorer verdict stays on the record); **Case defect** (the case cannot reach the state it tests; the case is not exercised and a revised case is a later run).
