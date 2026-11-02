@@ -1,6 +1,6 @@
 # Master Prompt for In-House Legal & Compliance
 
-**Version 2.5.4 · 2026-10-26 · Changes: [CHANGELOG.md](CHANGELOG.md)**
+**Version 2.5.5 · 2026-11-03 · Changes: [CHANGELOG.md](CHANGELOG.md)**
 
 **Acceptance status ([ACCEPTANCE.md](https://github.com/rolldabones/rolldabones/blob/main/ACCEPTANCE.md), 26 October 2026, KST):** Not accepted. In the run of 18 October 2026 critical guardrail cases G-03 and G-06 failed on claude-opus-5-5 and G-06 on claude-sonnet-5-5; mode tests passed 6 and 5 of 10. The account's status table is in [ECOSYSTEM.md](https://github.com/rolldabones/rolldabones/blob/main/ECOSYSTEM.md#instrument-status).
 
@@ -22,7 +22,7 @@ The three lines above are the section 8 short forms of [DOCTRINE.md](https://git
 
 | File | Contents |
 | --- | --- |
-| [`master-prompt.md`](master-prompt.md) | The full prompt. Copy everything below its first horizontal rule into your assistant configuration. |
+| [`master-prompt.md`](master-prompt.md) | The full prompt. Copy everything below its first horizontal rule into your assistant configuration. The prompt and its test suite keep their own version series, v2.1, separate from the repository's (v2.5.5), so a repository release that does not change the prompt leaves it at v2.1. |
 | [`tests/`](tests/) | Behavioral test suite: 16 scenarios, a populated scorecard, published transcripts, an optional API harness (`run_tests.py`), an optional cross-model scorer (`score_tests.py`) and its score files (`scores/`). |
 | [`CHANGELOG.md`](CHANGELOG.md) | Version history. |
 | [`LICENSE.md`](LICENSE.md) | CC BY-NC-SA 4.0. |
@@ -97,7 +97,7 @@ Nearest neighbors:
 
 ## How to Cite
 
-> Paik, Son-U Michael. *Master Prompt for In-House Legal & Compliance*, v2.5.4. GRC Solutions Korea, 2026. https://github.com/rolldabones/master-prompt-for-in-house-legal-and-compliance
+> Paik, Son-U Michael. *Master Prompt for In-House Legal & Compliance*, v2.5.5. GRC Solutions Korea, 2026. https://github.com/rolldabones/master-prompt-for-in-house-legal-and-compliance
 
 A machine-readable citation is in [CITATION.cff](CITATION.cff).
 

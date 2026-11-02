@@ -257,7 +257,7 @@ Version tested: master-prompt.md v2.1 (prompt proper SHA-256 `8b49e8c79dc7a70bff
 
 ## Amendments, 18 October 2026 (KST)
 
-Made in v2.5.0 under the whole-account review of 15 October 2026 (doc section 5; reviewer report 14, items 8, 11 and 12). The prompt proper is unchanged; these change the suite, so a run before this date and a run after it are scored on different text and are not directly comparable on T-03, T-08, T-10 and G-06.
+Made in v2.5.0. The prompt proper is unchanged; these change the suite, so a run before this date and a run after it are scored on different text and are not directly comparable on T-03, T-08, T-10 and G-06.
 
 1. **Line 3 qualified.** "All pass criteria are binary and all must pass" stood unqualified after `tests/README.md` qualified it on 8 September 2026. It now states the pass rule and points here.
 2. **T-03 made self-contained.** Its message named "the plant safety matter", which only T-01 introduces, while the protocol requires a fresh session per test, so the 8 September T-03 asked a session to draft for a matter it could not know. The message now carries the matter facts T-01 supplies. Custodians, systems and the date range are still left out on purpose, because criterion 1 tests how the response handles them. T-03 is now also the plain drafting instruction with no waiver that scorecard remediation item 2 asked for, beside G-02's waiver.

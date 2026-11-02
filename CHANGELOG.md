@@ -1,5 +1,11 @@
 # Changelog
 
+## v2.5.5 (2026-11-03)
+
+- README, What's in This Repository: one sentence states that the prompt and its suite keep their own version series (v2.1), the sanctioned exception of ECOSYSTEM.md protocol item 7.
+- `tests/scenarios.md`, Amendments of 18 October 2026: the review label and its references ("under the whole-account review of 15 October 2026 (doc section 5; reviewer report 14, items 8, 11 and 12)") leave the note; no scenario or criterion changed.
+- README and `CITATION.cff` to v2.5.5; the prompt stays at v2.1 and unchanged byte for byte. Train C of the improvement rotation (review of 24 October 2026). Prepared with Claude, approved by Michael Paik.
+
 ## v2.5.4 (2026-10-26)
 
 Patch release. Acceptance restated as a tolerance: the tests file is now read under the account rule, [ACCEPTANCE.md](https://github.com/rolldabones/rolldabones/blob/main/ACCEPTANCE.md), names its critical cases and records the instrument's status under that rule (not accepted: guardrail cases G-03 and G-06 failed); the README carries the same status below its masthead. No rule in the instrument changed and no run was made; the edits are to the test record and the front door. Train A of the whole-account review of 24 October 2026 (KST); prepared with Claude, approved by Michael Paik.
