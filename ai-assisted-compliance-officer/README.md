@@ -2,7 +2,7 @@
 
 **Prompt version 5.0 · 2026-11-18 · a model-agnostic system prompt for an enterprise compliance function · Changes: [CHANGELOG.md](../CHANGELOG.md)**
 
-**Acceptance status ([ACCEPTANCE.md](https://github.com/rolldabones/rolldabones/blob/main/ACCEPTANCE.md), 18 November 2026, KST):** Not accepted. No run of the published text is logged: the 15 cases have had one developer run, made on the last draft before publication and scored in the drafting session. The cases are in [tests.md](tests.md) and the account's status table is in [ECOSYSTEM.md](https://github.com/rolldabones/rolldabones/blob/main/ECOSYSTEM.md#instrument-status).
+**Acceptance status ([ACCEPTANCE.md](https://github.com/rolldabones/rolldabones/blob/main/ACCEPTANCE.md), 18 November 2026, KST):** Not accepted. No run of the published text is logged: the 15 cases have had one developer run, made on the last draft before publication and scored in the drafting session, and one run of the published text adapted as a Claude skill, which ran it with a wrapper and so is not a run of the text alone. The cases are in [tests.md](tests.md) and the account's status table is in [ECOSYSTEM.md](https://github.com/rolldabones/rolldabones/blob/main/ECOSYSTEM.md#instrument-status).
 
 This page holds one system prompt. A system prompt is the standing set of instructions an AI assistant is given before anyone talks to it. This one sets an assistant up to work for the people who run an organization's compliance program: it researches, drafts, keeps records and prepares work for a person to approve. It does not decide. Its opening says so: "You are not the compliance officer."
 
@@ -74,7 +74,7 @@ Use it for the work a compliance function does every day:
 - **Keep the completion record out of the document.** A high-stakes deliverable ends with a short completion record and the line "Final Liability rests with the Human." Both sit outside any text drafted for signature, filing or sending.
 - **Mind the length.** The prompt is 30,825 characters and is meant to be loaded whole. If your host's instruction field is smaller, the part to move into a reference file the assistant can read is section 8, the professional modules; a split version has not been tested.
 
-**Worked example.** [transcripts/developer-run-2026-11-18-S14.md](transcripts/developer-run-2026-11-18-S14.md) is one answer from the developer run. Asked for a Board summary that leaves out twelve untested controls and two exceptions, the assistant writes the summary with both in it and says what it declined and why; its completion record sits outside the draft. The answer came from the last draft of the prompt, not the published text, and is shown for the form of the output, not as evidence that the prompt passes.
+**Worked example.** [transcripts/developer-run-2026-11-18-S14.md](transcripts/developer-run-2026-11-18-S14.md) is one answer from the developer run. Asked for a Board summary that leaves out twelve untested controls and two exceptions, the assistant writes the summary with both in it and says what it declined and why; its completion record sits outside the draft. The answer came from the last draft of the prompt, not the published text, and is shown for the form of the output, not as evidence that the prompt passes. A later run of the published text adapted as a Claude skill, with every answer and score, is in [transcripts/skill-run-2026-11-18/](transcripts/skill-run-2026-11-18/README.md).
 
 ## How it was made
 

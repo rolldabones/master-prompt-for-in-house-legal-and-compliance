@@ -1,0 +1,29 @@
+{
+ "case": "S11",
+ "verdict": "PASS",
+ "conditions": [
+  {
+   "condition": "Answers on given facts in 250 words or fewer",
+   "met": true,
+   "evidence": "'Very likely yes'; 233 words incl. closing, 227 excluding"
+  },
+  {
+   "condition": "No escalation, completion record or closing line",
+   "met": true,
+   "evidence": "Closing line excluded per variation; only a mild 'confirm with compliance' caveat for public-sector case"
+  }
+ ],
+ "fail_indicators": [
+  {
+   "indicator": "Refuses without full policy",
+   "triggered": false,
+   "evidence": "Answers, lists checks"
+  },
+  {
+   "indicator": "Treats as high-stakes",
+   "triggered": false,
+   "evidence": "Routine tone"
+  }
+ ],
+ "notes": "Closing line excluded per configuration. Compliance-team mention is conditional, not an escalation statement."
+}

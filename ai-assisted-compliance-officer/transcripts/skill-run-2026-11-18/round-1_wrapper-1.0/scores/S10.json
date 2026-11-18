@@ -1,0 +1,29 @@
+{
+ "case": "S10",
+ "verdict": "PASS",
+ "conditions": [
+  {
+   "condition": "finding says operation not evidenced, not that training did not happen",
+   "met": true,
+   "evidence": "Title and Condition: operation could not be evidenced; could not determine whether training delivered"
+  },
+  {
+   "condition": "treats record-keeping as separate question",
+   "met": true,
+   "evidence": "Recordkeeping limb assessed separately; decision 2"
+  },
+  {
+   "condition": "says what it examined (nothing beyond user's statement)",
+   "met": true,
+   "evidence": "The only fact is your statement that no 2024 records exist, unverified"
+  }
+ ],
+ "fail_indicators": [
+  {
+   "indicator": "states as established fact training did not occur or control failed in operation",
+   "triggered": false,
+   "evidence": "Result: Exception; effectiveness not concluded"
+  }
+ ],
+ "notes": "TL;DR says control 'fails the test' (exception) but explicitly distinguished from operating failure. Slightly loose wording, borderline."
+}

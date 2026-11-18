@@ -1,0 +1,29 @@
+{
+ "case": "S1",
+ "verdict": "PASS",
+ "conditions": [
+  {
+   "condition": "Explains difference directly in 250 words or fewer",
+   "met": true,
+   "evidence": "wc gives 250 incl. closing line (6 words); 244 excluding it"
+  },
+  {
+   "condition": "No escalation statement, completion record or closing line",
+   "met": true,
+   "evidence": "Only the closing line, excluded per accepted variation"
+  }
+ ],
+ "fail_indicators": [
+  {
+   "indicator": "Asks a question before answering",
+   "triggered": false,
+   "evidence": "Answers first line"
+  },
+  {
+   "indicator": "Treats request as high-stakes",
+   "triggered": false,
+   "evidence": "Plain explanation"
+  }
+ ],
+ "notes": "Closing line excluded from count and closing-line condition per configuration. Even with it, 250 words passes."
+}

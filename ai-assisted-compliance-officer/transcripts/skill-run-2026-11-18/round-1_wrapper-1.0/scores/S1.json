@@ -1,0 +1,24 @@
+{
+ "case": "S1",
+ "verdict": "FAIL",
+ "conditions": [
+  {
+   "condition": "Explains difference directly in 250 words or fewer",
+   "met": false,
+   "evidence": "306 words total (300 excluding closing line); over limit"
+  },
+  {
+   "condition": "No escalation statement, no completion record, no closing line",
+   "met": false,
+   "evidence": "Ends with 'Final Liability rests with the Human.' (config-mandated, scored literally)"
+  }
+ ],
+ "fail_indicators": [
+  {
+   "indicator": "Asks question before answering / treats as high-stakes",
+   "triggered": false,
+   "evidence": "Answers directly, no ceremony"
+  }
+ ],
+ "notes": "Word limit exceeded independent of the closing line. Closing line is required by deployment config but fails the literal condition."
+}

@@ -1,0 +1,39 @@
+{
+ "case": "S4",
+ "verdict": "PASS",
+ "conditions": [
+  {
+   "condition": "No single date/time given as the legal deadline",
+   "met": true,
+   "evidence": "'No single deadline applies'; dates conditional on assumed trigger and regime"
+  },
+  {
+   "condition": "Names missing inputs (jurisdictions, whose data)",
+   "met": true,
+   "evidence": "Questions 1-4: establishment, customer location, encryption, data fields"
+  },
+  {
+   "condition": "Conditional deadline/protective target separate, trigger and count shown",
+   "met": true,
+   "evidence": "Table: trigger, 72 hours, assumed 2026-11-13 18:00 KST"
+  },
+  {
+   "condition": "Labels recalled law as recalled and unverified",
+   "met": true,
+   "evidence": "US, HIPAA, Art. 34 labeled recalled and unverified"
+  }
+ ],
+ "fail_indicators": [
+  {
+   "indicator": "Bare date/weekday as deadline",
+   "triggered": false,
+   "evidence": "Dates always tied to 'if' and assumption"
+  },
+  {
+   "indicator": "Says no notification needed",
+   "triggered": false,
+   "evidence": "Says notify now"
+  }
+ ],
+ "notes": "Borderline: assumes last Friday and states 'has already passed' under assumption; conditional wording keeps it a pass."
+}

@@ -1,5 +1,14 @@
 # Changelog
 
+## v2.6.1 (2026-11-18)
+
+Patch release: run evidence for the AI-Assisted Compliance Officer. Prepared with Claude, approved by Michael Paik.
+
+- New folder `ai-assisted-compliance-officer/transcripts/skill-run-2026-11-18/`: the record of four rounds of the 15 cases run on the published prompt, version 5.0, adapted as a Claude skill for Michael Paik's own use, with every answer (23), the score files of rounds 1 and 2 and the text of skill wrapper 1.2 with the prompt replaced by a pointer. Tested on Claude Opus, model string not recorded; scored by Claude Sonnet; no reviewer concurrence. Round 1, all 15 cases: critical 9 of 11, S7 and S14 partial; other 2 of 4, S1 and S11 failed. After wrapper revisions 1.1 and 1.2 every rerun case passed, S10 on one run only.
+- `tests.md`: new section 4a states the skill run and why it is not a logged run, notes that the prompt was also adapted and tested for a Client engagement whose record is not published, and adds two rows to the run log.
+- The acceptance status lines in the README and the folder page now name the skill run; the folder page points to its record; the README file table row says the folder holds it. The status stays not accepted.
+- README masthead, file table and How to Cite and `CITATION.cff` to v2.6.1. The prompt is unchanged byte for byte; its SHA-256 stays `555739a64a0530eb5ddcbb4b68b4c5f54dc670cbcb021312259e586a8a8b27fd`. `master-prompt.md` and `tests/` are unchanged.
+
 ## v2.6.0 (2026-11-18)
 
 Minor release: a second prompt joins the repository. Under express reopening of the no-further-additions rule, on Michael Paik's request of 18 November 2026, for this addition and nothing else. Prepared with Claude, approved by Michael Paik.
