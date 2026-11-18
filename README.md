@@ -1,12 +1,16 @@
 # Master Prompt for In-House Legal & Compliance
 
-**Version 2.5.6 · 2026-11-09 · Changes: [CHANGELOG.md](CHANGELOG.md)**
+**Version 2.6.0 · 2026-11-18 · Changes: [CHANGELOG.md](CHANGELOG.md)**
 
-**Acceptance status ([ACCEPTANCE.md](https://github.com/rolldabones/rolldabones/blob/main/ACCEPTANCE.md), 26 October 2026, KST):** Not accepted. In the run of 18 October 2026 critical guardrail cases G-03 and G-06 failed on claude-opus-5-5 and G-06 on claude-sonnet-5-5; mode tests passed 6 and 5 of 10. The account's status table is in [ECOSYSTEM.md](https://github.com/rolldabones/rolldabones/blob/main/ECOSYSTEM.md#instrument-status).
+**Acceptance status of the master prompt, v2.1 ([ACCEPTANCE.md](https://github.com/rolldabones/rolldabones/blob/main/ACCEPTANCE.md), 26 October 2026, KST):** Not accepted. In the run of 18 October 2026 critical guardrail cases G-03 and G-06 failed on claude-opus-5-5 and G-06 on claude-sonnet-5-5; mode tests passed 6 and 5 of 10. The account's status table is in [ECOSYSTEM.md](https://github.com/rolldabones/rolldabones/blob/main/ECOSYSTEM.md#instrument-status).
 
-**Status:** [↻ draft], as at 19 October 2026, after Michael Paik's review of that date, which concurs. Test decision **BLOCK** on every run: 18 October 2026 on `claude-opus-5-5` and `claude-sonnet-5-5`, each scored by the other model, and 8 September 2026 on `claude-opus-5`. No run has cleared the release thresholds. See [Testing](#testing).
+**Acceptance status of the AI-Assisted Compliance Officer, v5.0 ([ACCEPTANCE.md](https://github.com/rolldabones/rolldabones/blob/main/ACCEPTANCE.md), 18 November 2026, KST):** Not accepted. No run of the published text is logged: the 15 cases have had one developer run, made on the last draft before publication and scored in the drafting session. Its cases are in [ai-assisted-compliance-officer/tests.md](ai-assisted-compliance-officer/tests.md).
 
-A system prompt that turns a general-purpose AI assistant into a disciplined in-house legal and compliance assistant. It supports in-house counsel, compliance officers, legal operations, HR, procurement, internal audit, executives and business stakeholders in handling legal and compliance matters with discipline, clarity and practical usefulness.
+**Status of the master prompt:** [↻ draft], as at 19 October 2026, after Michael Paik's review of that date, which concurs. Test decision **BLOCK** on every run: 18 October 2026 on `claude-opus-5-5` and `claude-sonnet-5-5`, each scored by the other model, and 8 September 2026 on `claude-opus-5`. No run has cleared the release thresholds. See [Testing](#testing).
+
+This repository holds two system prompts: the master prompt, which this page describes, and the [AI-Assisted Compliance Officer](ai-assisted-compliance-officer/README.md), a model-agnostic prompt for an enterprise compliance function, which has its own page with its full text. [Two Prompts and Which to Use](#two-prompts-and-which-to-use) says how they differ.
+
+The master prompt is a system prompt that turns a general-purpose AI assistant into a disciplined in-house legal and compliance assistant. It supports in-house counsel, compliance officers, legal operations, HR, procurement, internal audit, executives and business stakeholders in handling legal and compliance matters with discipline, clarity and practical usefulness.
 
 It does not replace licensed counsel, current legal research or human judgment. It improves issue spotting, fact development, drafting quality, preservation discipline, escalation timing, outside-counsel management and operational decision support.
 
@@ -22,10 +26,20 @@ The three lines above are the section 8 short forms of [DOCTRINE.md](https://git
 
 | File | Contents |
 | --- | --- |
-| [`master-prompt.md`](master-prompt.md) | The full prompt. Copy everything below its first horizontal rule into your assistant configuration. The prompt and its test suite keep their own version series, v2.1, separate from the repository's (v2.5.6), so a repository release that does not change the prompt leaves it at v2.1. |
-| [`tests/`](tests/) | Behavioral test suite: 16 scenarios, a populated scorecard, published transcripts, an optional API harness (`run_tests.py`), an optional cross-model scorer (`score_tests.py`) and its score files (`scores/`). |
+| [`master-prompt.md`](master-prompt.md) | The full master prompt. Copy everything below its first horizontal rule into your assistant configuration. The prompt and its test suite keep their own version series, v2.1, separate from the repository's (v2.6.0), so a repository release that does not change the prompt leaves it at v2.1. |
+| [`tests/`](tests/) | Behavioral test suite of the master prompt: 16 scenarios, a populated scorecard, published transcripts, an optional API harness (`run_tests.py`), an optional cross-model scorer (`score_tests.py`) and its score files (`scores/`). |
+| [`ai-assisted-compliance-officer/`](ai-assisted-compliance-officer/README.md) | The AI-Assisted Compliance Officer, a model-agnostic system prompt for an enterprise compliance function, at its own version, v5.0: a plain-language page that ends with the full prompt, its 15 test cases in [`tests.md`](ai-assisted-compliance-officer/tests.md) and one transcript. The harness in `tests/` does not run it. |
 | [`CHANGELOG.md`](CHANGELOG.md) | Version history. |
 | [`LICENSE.md`](LICENSE.md) | CC BY-NC-SA 4.0. |
+
+## Two Prompts and Which to Use
+
+The two prompts are separate instruments. Load one or the other into an assistant: they were not written to be combined and have not been tested together.
+
+- **Master prompt** ([`master-prompt.md`](master-prompt.md), v2.1). For legal and compliance matters as they arrive. It asks its questions first, names the mode it is working in and produces work product for the user. Compliance program work is one of its ten modes. Run so far on Claude models only.
+- **AI-Assisted Compliance Officer** ([its page](ai-assisted-compliance-officer/README.md), v5.0). For running a compliance program over time: obligations, controls, testing, third parties, investigations, regulators and reporting. It starts on the task, governs tools and actions through handoffs and carries limits that no user can switch off. Written to be model-agnostic and run so far on one model family only.
+
+The side-by-side table, the intended uses, how to use it and how it was made are on [that page](ai-assisted-compliance-officer/README.md#how-it-differs-from-the-master-prompt). Neither prompt is accepted under [ACCEPTANCE.md](https://github.com/rolldabones/rolldabones/blob/main/ACCEPTANCE.md).
 
 ## Quick Start
 
@@ -97,7 +111,7 @@ Nearest neighbors:
 
 ## How to Cite
 
-> Paik, Son-U Michael. *Master Prompt for In-House Legal & Compliance*, v2.5.6. GRC Solutions Korea, 2026. https://github.com/rolldabones/master-prompt-for-in-house-legal-and-compliance
+> Paik, Son-U Michael. *Master Prompt for In-House Legal & Compliance*, v2.6.0. GRC Solutions Korea, 2026. https://github.com/rolldabones/master-prompt-for-in-house-legal-and-compliance
 
 A machine-readable citation is in [CITATION.cff](CITATION.cff).
 

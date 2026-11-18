@@ -1,5 +1,15 @@
 # Changelog
 
+## v2.6.0 (2026-11-18)
+
+Minor release: a second prompt joins the repository. Under express reopening of the no-further-additions rule, on Michael Paik's request of 18 November 2026, for this addition and nothing else. Prepared with Claude, approved by Michael Paik.
+
+- New folder `ai-assisted-compliance-officer/`. `README.md` is a plain-language page: it describes the AI-Assisted Compliance Officer as a model-agnostic system prompt, says how it differs from the master prompt, what it is for, how to use it and how it was made, including how to run its 15 scenarios on another model, and then gives the whole prompt, version 5.0, in one block (30,891 bytes, SHA-256 `555739a64a0530eb5ddcbb4b68b4c5f54dc670cbcb021312259e586a8a8b27fd`). `tests.md` holds the 15 cases, each with the text to send and its pass conditions, eleven of them critical, and the record of the developer run. `transcripts/developer-run-2026-11-18-S14.md` is one answer from that run.
+- The prompt keeps its own version series, v5.0, as the master prompt keeps v2.1. Its status under ACCEPTANCE.md is not accepted: no run of the published text is logged.
+- How version 5.0 was made, for the record: evaluated and revised from Michael Paik's version 4.0 on 18 November 2026; fourteen findings on version 4.0; two rounds of review by a separate Claude instance, 20 findings and then eight more, each adopted or answered; three developer runs of the scenarios; fifteen edits after the last run, not re-tested. Michael Paik confirmed five design choices that day. No run on another vendor's model was made before release, and the page explains how to make one.
+- README: masthead and How to Cite to v2.6.0; a new paragraph and a new section, Two Prompts and Which to Use, point to the page; each acceptance status line and the Status line names its prompt; the file table gains a row. `CITATION.cff` to v2.6.0, with the second prompt in the abstract.
+- `master-prompt.md`, `tests/` and the release gate are unchanged, and so is the prompt-proper SHA-256.
+
 ## v2.5.6 (2026-11-09)
 
 Patch release. Train D of the improvement rotation (review of 24 October 2026). Prepared with Claude, approved by Michael Paik.
