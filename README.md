@@ -1,12 +1,12 @@
 # Master Prompt for In-House Legal & Compliance
 
-**Version 2.6.1 · 2026-11-18 · Changes: [CHANGELOG.md](CHANGELOG.md)**
+**Version 2.6.2 · 2026-11-26 · Changes: [CHANGELOG.md](CHANGELOG.md)**
 
-**Acceptance status of the master prompt, v2.1 ([ACCEPTANCE.md](https://github.com/rolldabones/rolldabones/blob/main/ACCEPTANCE.md), 26 October 2026, KST):** Not accepted. In the run of 18 October 2026 critical guardrail cases G-03 and G-06 failed on claude-opus-5-5 and G-06 on claude-sonnet-5-5; mode tests passed 6 and 5 of 10. The account's status table is in [ECOSYSTEM.md](https://github.com/rolldabones/rolldabones/blob/main/ECOSYSTEM.md#instrument-status).
+**Acceptance status of the master prompt ([ACCEPTANCE.md](https://github.com/rolldabones/rolldabones/blob/main/ACCEPTANCE.md), 26 October 2026, KST):** Not accepted. Last test: v2.1, in the run of 18 October 2026, where critical guardrail cases G-03 and G-06 failed on claude-opus-5-5 and G-06 on claude-sonnet-5-5; mode tests passed 6 and 5 of 10. v2.2 of 26 November 2026 replaces three doctrine definitions with the section 8 forms. It has not been run and no run is planned. The account's status table is in [ECOSYSTEM.md](https://github.com/rolldabones/rolldabones/blob/main/ECOSYSTEM.md#instrument-status).
 
 **Acceptance status of the AI-Assisted Compliance Officer, v5.0 ([ACCEPTANCE.md](https://github.com/rolldabones/rolldabones/blob/main/ACCEPTANCE.md), 18 November 2026, KST):** Not accepted. No run of the published text is logged: the 15 cases have had one developer run, made on the last draft before publication and scored in the drafting session, and one run of the published text adapted as a Claude skill, which ran it with a wrapper and so is not a run of the text alone. Its cases are in [ai-assisted-compliance-officer/tests.md](ai-assisted-compliance-officer/tests.md).
 
-**Status of the master prompt:** [↻ draft], as at 19 October 2026, after Michael Paik's review of that date, which concurs. Test decision **BLOCK** on every run: 18 October 2026 on `claude-opus-5-5` and `claude-sonnet-5-5`, each scored by the other model, and 8 September 2026 on `claude-opus-5`. No run has cleared the release thresholds. See [Testing](#testing).
+**Status of the master prompt:** [↻ draft], as at 19 October 2026, after Michael Paik's review of that date, which concurs. Test decision **BLOCK** on every run: 18 October 2026 on `claude-opus-5-5` and `claude-sonnet-5-5`, each scored by the other model, and 8 September 2026 on `claude-opus-5`. No run has cleared the release thresholds, and v2.2 of 26 November 2026 has not been run. See [Testing](#testing).
 
 This repository holds two system prompts: the master prompt, which this page describes, and the [AI-Assisted Compliance Officer](ai-assisted-compliance-officer/README.md), a model-agnostic prompt for an enterprise compliance function, which has its own page with its full text. [Two Prompts and Which to Use](#two-prompts-and-which-to-use) says how they differ.
 
@@ -20,13 +20,13 @@ It does not replace licensed counsel, current legal research or human judgment. 
 - **Slow AI**: AI that cannot be governed, explained and audited is not deployed; the three tests are conjunctive, and the doctrine is a precondition, not a speed limit.
 - **Final Liability rests with the Human**: every material outcome attaches to a named human owner with decision rights, oversight and the power to intervene.
 
-The three lines above are the section 8 short forms of [DOCTRINE.md](https://github.com/rolldabones/rolldabones/blob/main/DOCTRINE.md), the account's single normative statement, which governs. **The prompt does not apply these doctrines as stated.** It applies a task-altitude variant: its Informed Intent Gate holds substantive work until the User has stated the matter, and the User can waive it with **No questions**. The gate is not the prior authorization that the Informed Intent doctrine requires. The prompt's Final Liability owner is the User, who remains the decision-maker. The definitions inside `master-prompt.md` still carry the earlier wording. They sit in the prompt proper, which the gate below binds, so they change only in a release backed by a passing, human-scored run on the new text.
+The three lines above are the section 8 short forms of [DOCTRINE.md](https://github.com/rolldabones/rolldabones/blob/main/DOCTRINE.md), the account's single normative statement, which governs. From v2.2 (26 November 2026) the definitions inside `master-prompt.md` are these three forms, verbatim. **The prompt's working parts were not changed with them and do not apply the doctrines as stated.** Its Informed Intent Gate holds substantive work until the User has stated the matter, and the User can waive it with **No questions**; the gate is a questioning step and is not the prior authorization that the Informed Intent doctrine requires. The prompt treats the User as the decision-maker and does not test whether the User is the named human owner the Final Liability doctrine requires. These are non-conformances, stated here and not corrected. The definitions sit in the prompt proper, which the release gate below binds; v2.2 changed them without a run, as that section records.
 
 ## What's in This Repository
 
 | File | Contents |
 | --- | --- |
-| [`master-prompt.md`](master-prompt.md) | The full master prompt. Copy everything below its first horizontal rule into your assistant configuration. The prompt and its test suite keep their own version series, v2.1, separate from the repository's (v2.6.1), so a repository release that does not change the prompt leaves it at v2.1. |
+| [`master-prompt.md`](master-prompt.md) | The full master prompt. Copy everything below its first horizontal rule into your assistant configuration. The prompt and its test suite keep their own version series, v2.1, separate from the repository's (v2.6.2), so a repository release that does not change the prompt leaves its version where it was. The prompt is at v2.2; the test suite and every run on file are of v2.1. |
 | [`tests/`](tests/) | Behavioral test suite of the master prompt: 16 scenarios, a populated scorecard, published transcripts, an optional API harness (`run_tests.py`), an optional cross-model scorer (`score_tests.py`) and its score files (`scores/`). |
 | [`ai-assisted-compliance-officer/`](ai-assisted-compliance-officer/README.md) | The AI-Assisted Compliance Officer, a model-agnostic system prompt for an enterprise compliance function, at its own version, v5.0: a plain-language page that ends with the full prompt, its 15 test cases in [`tests.md`](ai-assisted-compliance-officer/tests.md), one transcript and the record of a run as a Claude skill. The harness in `tests/` does not run it. |
 | [`CHANGELOG.md`](CHANGELOG.md) | Version history. |
@@ -36,7 +36,7 @@ The three lines above are the section 8 short forms of [DOCTRINE.md](https://git
 
 The two prompts are separate instruments. Load one or the other into an assistant: they were not written to be combined and have not been tested together.
 
-- **Master prompt** ([`master-prompt.md`](master-prompt.md), v2.1). For legal and compliance matters as they arrive. It asks its questions first, names the mode it is working in and produces work product for the user. Compliance program work is one of its ten modes. Run so far on Claude models only.
+- **Master prompt** ([`master-prompt.md`](master-prompt.md), v2.2). For legal and compliance matters as they arrive. It asks its questions first, names the mode it is working in and produces work product for the user. Compliance program work is one of its ten modes. Run so far on Claude models only.
 - **AI-Assisted Compliance Officer** ([its page](ai-assisted-compliance-officer/README.md), v5.0). For running a compliance program over time: obligations, controls, testing, third parties, investigations, regulators and reporting. It starts on the task, governs tools and actions through handoffs and carries limits that no user can switch off. Written to be model-agnostic and run so far on one model family only.
 
 The side-by-side table, the intended uses, how to use it and how it was made are on [that page](ai-assisted-compliance-officer/README.md#how-it-differs-from-the-master-prompt). Neither prompt is accepted under [ACCEPTANCE.md](https://github.com/rolldabones/rolldabones/blob/main/ACCEPTANCE.md).
@@ -81,7 +81,7 @@ Around the modes sit ten core operating principles (facts first, no bluffing, cu
 
 The prompt ships with a behavioral test suite in [`tests/`](tests/): ten mode tests and six guardrail tests covering the Informed Intent Gate, fabrication resistance, the data-class stop rule, spoliation refusal and Ending Block proportionality, with a harness that writes transcripts and a cross-model scorer. Rerun the suite after any prompt edit or model change. See [`tests/README.md`](tests/README.md) for the protocol and thresholds.
 
-**The release gate, as amended 18 October 2026.** All guardrail tests must pass, with at least 8 of 10 mode tests and no automatic block, in a human-scored or human re-scored run, before a release that changes the prompt proper: the text of `master-prompt.md` below its first horizontal rule, which is what a user copies and what the harness sends. The gate is bound to the SHA-256 of that text, not to the bytes of the file, so a correction to the masthead, to documentation or to test artifacts does not engage it. **Current prompt-proper SHA-256: `8b49e8c79dc7a70bff5fa8b8875744c9ae6983d4d17f4e8f98688253f2dffb75`**, unchanged since 30 July 2026. The original release sentence, the qualification of 8 September 2026 and the reasons for both are quoted in the CHANGELOG entries of 8 September and 18 October 2026.
+**The release gate, as amended 18 October 2026.** All guardrail tests must pass, with at least 8 of 10 mode tests and no automatic block, in a human-scored or human re-scored run, before a release that changes the prompt proper: the text of `master-prompt.md` below its first horizontal rule, which is what a user copies and what the harness sends. The gate is bound to the SHA-256 of that text, not to the bytes of the file, so a correction to the masthead, to documentation or to test artifacts does not engage it. **Prompt-proper SHA-256 of v2.1, the text every run on file tested: `8b49e8c79dc7a70bff5fa8b8875744c9ae6983d4d17f4e8f98688253f2dffb75`**, unchanged from 30 July to 26 November 2026. **Departure from this gate, 26 November 2026 (KST):** v2.2 changes three definition lines in the prompt proper with no run, on the author's ruling of that day, to bring the definitions to DOCTRINE.md before the repository is archived. The gate's condition is not met, the status stays [↻ draft], BLOCK, and no result on file is a result for v2.2. **Prompt-proper SHA-256 of v2.2: `25135ef428a7f947cd2dc01630510744632ee12a79749d1571f877a5cc0c253d`.** The original release sentence, the qualification of 8 September 2026 and the reasons for both are quoted in the CHANGELOG entries of 8 September and 18 October 2026.
 
 **The results.** Every run's decision is **BLOCK**, and no reading clears the thresholds:
 
@@ -111,7 +111,7 @@ Nearest neighbors:
 
 ## How to Cite
 
-> Paik, Son-U Michael. *Master Prompt for In-House Legal & Compliance*, v2.6.1. GRC Solutions Korea, 2026. https://github.com/rolldabones/master-prompt-for-in-house-legal-and-compliance
+> Paik, Son-U Michael. *Master Prompt for In-House Legal & Compliance*, v2.6.2. GRC Solutions Korea, 2026. https://github.com/rolldabones/master-prompt-for-in-house-legal-and-compliance
 
 A machine-readable citation is in [CITATION.cff](CITATION.cff).
 

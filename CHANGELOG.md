@@ -1,5 +1,15 @@
 # Changelog
 
+## v2.6.2 (2026-11-26)
+
+Patch release of the repository; the master prompt goes to v2.2. Four doctrine corrections, made without a run. Account review of 10 November 2026, High findings, accepted by Michael Paik that day; worked on his ruling of 26 November 2026 that every open High finding is fixed before the account's disposition of that weekend. Prepared with Claude, approved by Michael Paik.
+
+- **`master-prompt.md` to v2.2: the three definitions** (CSV rows 980 to 982, rulings #62 to #64). Informed Intent was defined as alignment between the User and the model, Slow AI as "deliberate, verified, context-aware use of AI rather than speed for its own sake" and Final Liability as the User remaining the decision-maker. Each is replaced by its DOCTRINE.md section 8 sentence form, verbatim. No other line of the prompt proper changed. Prompt-proper SHA-256 goes from `8b49e8c79dc7a70bff5fa8b8875744c9ae6983d4d17f4e8f98688253f2dffb75` to `25135ef428a7f947cd2dc01630510744632ee12a79749d1571f877a5cc0c253d`.
+- **Departure from the release gate.** The gate (README, Testing) allows a change to the prompt proper only after a passing, human-scored run, and ruling #62 of 10 November 2026 placed this fix in "the next gated release with a suite run". Michael Paik ruled on 26 November 2026 that the definitions are corrected now and that no suite will be re-run, because the repository is being archived that weekend. The status is unchanged: [↻ draft], BLOCK, Not accepted. Every run, score and transcript on file is of v2.1 and none is evidence about v2.2. The prompt's masthead, the README status lines and the Testing section say so.
+- **README, Governing Method** (CSV row 983, ruling #61) said the prompt "applies a task-altitude variant". DOCTRINE.md section 7 permits no variant. The paragraph now says that the definitions are the section 8 forms from v2.2, and that the Informed Intent Gate and the prompt's treatment of the User are non-conformances, stated and not corrected.
+- `tests/scenarios.md` and `tests/scorecard.md` name v2.1 and its SHA-256 as the text tested. They are records of those runs and are unchanged.
+- README and `CITATION.cff` to v2.6.2. The AI-Assisted Compliance Officer (v5.0) is unchanged.
+
 ## v2.6.1 (2026-11-18)
 
 Patch release: run evidence for the AI-Assisted Compliance Officer. Prepared with Claude, approved by Michael Paik.
