@@ -1,5 +1,13 @@
 # Changelog
 
+## v2.6.3 (2026-11-26)
+
+Final release: the archived edition. On Michael Paik's ruling of 26 November 2026, recorded in [DISPOSITION.md](https://github.com/rolldabones/rolldabones/blob/main/DISPOSITION.md): the repository is archived in place as a dated edition and receives no corrections after this release. Prepared with Claude, approved by Michael Paik.
+
+- **README:** the archive banner under the title, with the edition date, the version to cite and where the maintained work is. Each acceptance line reads "Last test"; the status it states is unchanged, and no known defect is removed. The line says where the run record and the transcripts are and that they are frozen at this tag.
+- Nothing is removed, renamed or moved, and every other file is unchanged byte for byte.
+- README and `CITATION.cff` to v2.6.3.
+
 ## v2.6.2 (2026-11-26)
 
 Patch release of the repository; the master prompt goes to v2.2. Four doctrine corrections, made without a run. Account review of 10 November 2026, High findings, accepted by Michael Paik that day; worked on his ruling of 26 November 2026 that every open High finding is fixed before the account's disposition of that weekend. Prepared with Claude, approved by Michael Paik.

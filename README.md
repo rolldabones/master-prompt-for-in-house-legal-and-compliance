@@ -1,10 +1,12 @@
 # Master Prompt for In-House Legal & Compliance
 
-**Version 2.6.2 · 2026-11-26 · Changes: [CHANGELOG.md](CHANGELOG.md)**
+> **Archived edition of 26 November 2026.** This repository is archived and read-only. It receives no corrections, legal ones included: verify every statement of law, regulation or standard against a current primary source before you rely on it. What I maintain, and why this repository is not part of it, is in [DISPOSITION.md](https://github.com/rolldabones/rolldabones/blob/main/DISPOSITION.md). Cite this edition as *Master Prompt for In-House Legal & Compliance*, v2.6.3 (26 November 2026). The license and [LICENSING.md](https://github.com/rolldabones/rolldabones/blob/main/LICENSING.md) still apply. Reach me at sonupaik@gmail.com. The last test of each prompt is stated under Last test below.
 
-**Acceptance status of the master prompt ([ACCEPTANCE.md](https://github.com/rolldabones/rolldabones/blob/main/ACCEPTANCE.md), 26 October 2026, KST):** Not accepted. Last test: v2.1, in the run of 18 October 2026, where critical guardrail cases G-03 and G-06 failed on claude-opus-5-5 and G-06 on claude-sonnet-5-5; mode tests passed 6 and 5 of 10. v2.2 of 26 November 2026 replaces three doctrine definitions with the section 8 forms. It has not been run and no run is planned. The account's status table is in [ECOSYSTEM.md](https://github.com/rolldabones/rolldabones/blob/main/ECOSYSTEM.md#instrument-status).
+**Version 2.6.3 · 2026-11-26 · Archived edition · Changes: [CHANGELOG.md](CHANGELOG.md)**
 
-**Acceptance status of the AI-Assisted Compliance Officer, v5.0 ([ACCEPTANCE.md](https://github.com/rolldabones/rolldabones/blob/main/ACCEPTANCE.md), 18 November 2026, KST):** Not accepted. No run of the published text is logged: the 15 cases have had one developer run, made on the last draft before publication and scored in the drafting session, and one run of the published text adapted as a Claude skill, which ran it with a wrapper and so is not a run of the text alone. Its cases are in [ai-assisted-compliance-officer/tests.md](ai-assisted-compliance-officer/tests.md).
+**Last test of the master prompt, as this edition (v2.6.3) records it ([ACCEPTANCE.md](https://github.com/rolldabones/rolldabones/blob/main/ACCEPTANCE.md), 26 October 2026, KST):** Not accepted. Last test: v2.1, in the run of 18 October 2026, where critical guardrail cases G-03 and G-06 failed on claude-opus-5-5 and G-06 on claude-sonnet-5-5; mode tests passed 6 and 5 of 10. v2.2 of 26 November 2026 replaces three doctrine definitions with the section 8 forms. It has not been run and no run is planned. No later run exists and none will be made. The scorecard, the scores and the transcripts stay in this repository, under [`tests/`](tests/scorecard.md) and [`ai-assisted-compliance-officer/`](ai-assisted-compliance-officer/tests.md), frozen at tag v2.6.3; ask at sonupaik@gmail.com. The account's status table is in [ECOSYSTEM.md](https://github.com/rolldabones/rolldabones/blob/main/ECOSYSTEM.md#instrument-status).
+
+**Last test of the AI-Assisted Compliance Officer, v5.0, as this edition (v2.6.3) records it ([ACCEPTANCE.md](https://github.com/rolldabones/rolldabones/blob/main/ACCEPTANCE.md), 18 November 2026, KST):** Not accepted. No run of the published text is logged: the 15 cases have had one developer run, made on the last draft before publication and scored in the drafting session, and one run of the published text adapted as a Claude skill, which ran it with a wrapper and so is not a run of the text alone. Its cases are in [ai-assisted-compliance-officer/tests.md](ai-assisted-compliance-officer/tests.md).
 
 **Status of the master prompt:** [↻ draft], as at 19 October 2026, after Michael Paik's review of that date, which concurs. Test decision **BLOCK** on every run: 18 October 2026 on `claude-opus-5-5` and `claude-sonnet-5-5`, each scored by the other model, and 8 September 2026 on `claude-opus-5`. No run has cleared the release thresholds, and v2.2 of 26 November 2026 has not been run. See [Testing](#testing).
 
@@ -26,7 +28,7 @@ The three lines above are the section 8 short forms of [DOCTRINE.md](https://git
 
 | File | Contents |
 | --- | --- |
-| [`master-prompt.md`](master-prompt.md) | The full master prompt. Copy everything below its first horizontal rule into your assistant configuration. The prompt and its test suite keep their own version series, v2.1, separate from the repository's (v2.6.2), so a repository release that does not change the prompt leaves its version where it was. The prompt is at v2.2; the test suite and every run on file are of v2.1. |
+| [`master-prompt.md`](master-prompt.md) | The full master prompt. Copy everything below its first horizontal rule into your assistant configuration. The prompt and its test suite keep their own version series, v2.1, separate from the repository's (v2.6.3), so a repository release that does not change the prompt leaves its version where it was. The prompt is at v2.2; the test suite and every run on file are of v2.1. |
 | [`tests/`](tests/) | Behavioral test suite of the master prompt: 16 scenarios, a populated scorecard, published transcripts, an optional API harness (`run_tests.py`), an optional cross-model scorer (`score_tests.py`) and its score files (`scores/`). |
 | [`ai-assisted-compliance-officer/`](ai-assisted-compliance-officer/README.md) | The AI-Assisted Compliance Officer, a model-agnostic system prompt for an enterprise compliance function, at its own version, v5.0: a plain-language page that ends with the full prompt, its 15 test cases in [`tests.md`](ai-assisted-compliance-officer/tests.md), one transcript and the record of a run as a Claude skill. The harness in `tests/` does not run it. |
 | [`CHANGELOG.md`](CHANGELOG.md) | Version history. |
@@ -111,7 +113,7 @@ Nearest neighbors:
 
 ## How to Cite
 
-> Paik, Son-U Michael. *Master Prompt for In-House Legal & Compliance*, v2.6.2. GRC Solutions Korea, 2026. https://github.com/rolldabones/master-prompt-for-in-house-legal-and-compliance
+> Paik, Son-U Michael. *Master Prompt for In-House Legal & Compliance*, v2.6.3. GRC Solutions Korea, 2026. https://github.com/rolldabones/master-prompt-for-in-house-legal-and-compliance
 
 A machine-readable citation is in [CITATION.cff](CITATION.cff).
 
